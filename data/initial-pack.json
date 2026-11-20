@@ -1,0 +1,548 @@
+{
+  "version": 1,
+  "prompts": [
+    {
+      "id": "verbal-01",
+      "mode_id": "verbal",
+      "answer": "伞",
+      "aliases": [
+        "雨伞"
+      ],
+      "category": "随身物品",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "下雨",
+        "遮阳"
+      ],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "verbal-02",
+      "mode_id": "verbal",
+      "answer": "回形针",
+      "aliases": [
+        "曲别针"
+      ],
+      "category": "文具",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "金属",
+        "纸张"
+      ],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "verbal-03",
+      "mode_id": "verbal",
+      "answer": "爆米花",
+      "aliases": [
+        "玉米花"
+      ],
+      "category": "食物",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "电影院",
+        "零食"
+      ],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "verbal-04",
+      "mode_id": "verbal",
+      "answer": "不倒翁",
+      "aliases": [
+        "扳不倒"
+      ],
+      "category": "玩具",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "摇晃",
+        "玩具"
+      ],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "verbal-05",
+      "mode_id": "verbal",
+      "answer": "自动售货机",
+      "aliases": [
+        "贩卖机"
+      ],
+      "category": "公共设施",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "投币",
+        "饮料"
+      ],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "verbal-06",
+      "mode_id": "verbal",
+      "answer": "旋转木马",
+      "aliases": [
+        "回转木马"
+      ],
+      "category": "游乐设施",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "游乐园",
+        "音乐"
+      ],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "verbal-07",
+      "mode_id": "verbal",
+      "answer": "回声",
+      "aliases": [
+        "回音"
+      ],
+      "category": "自然现象",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "山谷",
+        "声音"
+      ],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "verbal-08",
+      "mode_id": "verbal",
+      "answer": "万花筒",
+      "aliases": [],
+      "category": "玩具",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "图案",
+        "镜子"
+      ],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "verbal-09",
+      "mode_id": "verbal",
+      "answer": "隐形眼镜",
+      "aliases": [
+        "角膜接触镜"
+      ],
+      "category": "随身物品",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "近视",
+        "镜框"
+      ],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "verbal-10",
+      "mode_id": "verbal",
+      "answer": "失物招领处",
+      "aliases": [
+        "失物招领点"
+      ],
+      "category": "公共设施",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "丢失",
+        "认领"
+      ],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "verbal-11",
+      "mode_id": "verbal",
+      "answer": "会自己回去充电的扫地机器人",
+      "aliases": [
+        "自动回充的扫地机"
+      ],
+      "category": "家居",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "地板",
+        "电量"
+      ],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "verbal-12",
+      "mode_id": "verbal",
+      "answer": "冰箱里只剩最后一口的牛奶",
+      "aliases": [
+        "只剩一口的盒装奶"
+      ],
+      "category": "生活情境",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "早餐",
+        "喝光"
+      ],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "verbal-13",
+      "mode_id": "verbal",
+      "answer": "按一下就会弹开的自动折叠伞",
+      "aliases": [
+        "一键弹开的折叠雨伞"
+      ],
+      "category": "随身物品",
+      "difficulty": "hard",
+      "forbidden_terms": [
+        "按钮",
+        "雨天"
+      ],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "verbal-14",
+      "mode_id": "verbal",
+      "answer": "一边倒数一边变短的行人绿灯",
+      "aliases": [
+        "带倒计时的行人通行信号"
+      ],
+      "category": "公共设施",
+      "difficulty": "hard",
+      "forbidden_terms": [
+        "路口",
+        "秒数"
+      ],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "verbal-15",
+      "mode_id": "verbal",
+      "answer": "只在房门关上之后才想起来的钥匙",
+      "aliases": [
+        "关门后才发现忘带钥匙"
+      ],
+      "category": "生活情境",
+      "difficulty": "hard",
+      "forbidden_terms": [
+        "门锁",
+        "口袋"
+      ],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "charades-01",
+      "mode_id": "charades",
+      "answer": "划船",
+      "aliases": [
+        "划小船"
+      ],
+      "category": "运动",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "charades-02",
+      "mode_id": "charades",
+      "answer": "梳头",
+      "aliases": [
+        "梳头发"
+      ],
+      "category": "日常动作",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "charades-03",
+      "mode_id": "charades",
+      "answer": "骑自行车",
+      "aliases": [
+        "骑单车"
+      ],
+      "category": "出行",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "charades-04",
+      "mode_id": "charades",
+      "answer": "吹蜡烛",
+      "aliases": [
+        "吹生日蜡烛"
+      ],
+      "category": "日常动作",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "charades-05",
+      "mode_id": "charades",
+      "answer": "拧毛巾",
+      "aliases": [
+        "绞毛巾"
+      ],
+      "category": "家务",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "charades-06",
+      "mode_id": "charades",
+      "answer": "跳绳",
+      "aliases": [],
+      "category": "运动",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "charades-07",
+      "mode_id": "charades",
+      "answer": "给气球打结",
+      "aliases": [
+        "把气球口系起来"
+      ],
+      "category": "日常动作",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "charades-08",
+      "mode_id": "charades",
+      "answer": "隔着玻璃擦窗",
+      "aliases": [
+        "擦玻璃窗"
+      ],
+      "category": "家务",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "charades-09",
+      "mode_id": "charades",
+      "answer": "端着一碗热汤",
+      "aliases": [
+        "小心端热汤"
+      ],
+      "category": "日常动作",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "charades-10",
+      "mode_id": "charades",
+      "answer": "追一顶被风吹走的帽子",
+      "aliases": [
+        "追被吹跑的帽子"
+      ],
+      "category": "生活情境",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "charades-11",
+      "mode_id": "charades",
+      "answer": "踮起脚去够高处的罐子",
+      "aliases": [
+        "踮脚拿高处的罐子"
+      ],
+      "category": "生活情境",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "charades-12",
+      "mode_id": "charades",
+      "answer": "穿针时总是对不准针眼",
+      "aliases": [
+        "线穿不进针眼"
+      ],
+      "category": "家务",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "charades-13",
+      "mode_id": "charades",
+      "answer": "刚叠好的衣服从手里滑了一地",
+      "aliases": [
+        "叠好的衣服掉了一地"
+      ],
+      "category": "生活情境",
+      "difficulty": "hard",
+      "forbidden_terms": [],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "charades-14",
+      "mode_id": "charades",
+      "answer": "拍合照时从相机旁跑回队伍里",
+      "aliases": [
+        "定时合照时跑回人群"
+      ],
+      "category": "生活情境",
+      "difficulty": "hard",
+      "forbidden_terms": [],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "charades-15",
+      "mode_id": "charades",
+      "answer": "一手按住被风掀起的地图一手找路",
+      "aliases": [
+        "按着被风吹起的地图找路"
+      ],
+      "category": "出行",
+      "difficulty": "hard",
+      "forbidden_terms": [],
+      "source_note": "自拟日常词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    }
+  ],
+  "twists": [
+    {
+      "id": "bulletin",
+      "title": "快讯播报",
+      "instruction": "像播报一条刚刚收到的新闻，先交代发生的事，再补充一个细节。",
+      "compatible_modes": [
+        "verbal"
+      ],
+      "difficulty": "medium",
+      "review_status": "playtest"
+    },
+    {
+      "id": "visitor",
+      "title": "初来地球",
+      "instruction": "假装队友第一次来地球，只讲看到的样子和它能做的事。",
+      "compatible_modes": [
+        "verbal"
+      ],
+      "difficulty": "easy",
+      "review_status": "playtest"
+    },
+    {
+      "id": "lost-found",
+      "title": "招领广播",
+      "instruction": "用失物招领广播的语气，描述两条能让人认出来的线索。",
+      "compatible_modes": [
+        "verbal"
+      ],
+      "difficulty": "medium",
+      "review_status": "playtest"
+    },
+    {
+      "id": "small-talk",
+      "title": "悄悄告诉你",
+      "instruction": "用分享小秘密的口吻，把线索一条一条告诉队友。",
+      "compatible_modes": [
+        "verbal"
+      ],
+      "difficulty": "easy",
+      "review_status": "playtest"
+    },
+    {
+      "id": "slow-motion",
+      "title": "慢镜头",
+      "instruction": "把关键动作放慢，让队友看清每一步。",
+      "compatible_modes": [
+        "charades"
+      ],
+      "difficulty": "easy",
+      "review_status": "playtest"
+    },
+    {
+      "id": "freeze",
+      "title": "定格画面",
+      "instruction": "每做完一个关键动作就停住一拍，再接着演下去。",
+      "compatible_modes": [
+        "charades"
+      ],
+      "difficulty": "medium",
+      "review_status": "playtest"
+    },
+    {
+      "id": "rewind",
+      "title": "倒带重播",
+      "instruction": "先把动作完整演一遍，再像录像倒带一样退回开头。",
+      "compatible_modes": [
+        "charades"
+      ],
+      "difficulty": "medium",
+      "review_status": "playtest"
+    },
+    {
+      "id": "zoom",
+      "title": "局部特写",
+      "instruction": "做完一遍后，把最能说明答案的那个小动作夸张地再演一次。",
+      "compatible_modes": [
+        "charades"
+      ],
+      "difficulty": "easy",
+      "review_status": "playtest"
+    }
+  ]
+}
