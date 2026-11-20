@@ -25,6 +25,7 @@
 - `docs/ASSET_PIPELINE.md` — 批量素材生产线
 - `design/VISUAL_CONTRACT.md` — spy-titles 风格转译合同
 - `design/MODE_ASSETS.json` — 模式素材配置
+- `design/spy-titles/` — 回合屏视觉提案、母版、图标与生成工具（DESIGN-01）
 - `docs/ROUND_SCREEN_SPEC.md` — 猜词回合页规格
 - `ROADMAP.md` — 版本路线图
 
