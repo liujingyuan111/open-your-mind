@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>开个脑洞 · 美术风格探索</title>
+<style>
+@font-face { font-family: 'KuaiLe'; src: url(fonts/ZCOOLKuaiLe-Regular.ttf); }
+@font-face { font-family: 'Smiley'; src: url(fonts/SmileySans-Oblique.ttf); }
+@font-face { font-family: 'FusionPixel'; src: url(fonts/fusion-pixel-12px-proportional-zh_hans.ttf); }
+
+html, body { margin: 0; padding: 0; background: #333; }
+body.gallery { display: flex; flex-wrap: wrap; gap: 30px; padding: 30px; }
+.frame { position: relative; width: 750px; height: 1624px; overflow: hidden; flex: none; }
+.frame * { box-sizing: border-box; }
+.abs { position: absolute; }
+.row { display: flex; align-items: center; }
+.answer-line { white-space: nowrap; text-align: center; }
+canvas.pix { image-rendering: pixelated; display: block; }
+.grain::after { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 50;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.06 0 0 0 0.5 -0.12'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>");
+  mix-blend-mode: multiply; opacity: .55; }
+
+/* ============ 1. 手账便签 ============ */
+.t-sketch { background-color: #f6f0e1; color: #2a2a2a; font-family: 'KuaiLe', 'Noto Sans SC', sans-serif;
+  background-image: linear-gradient(rgba(96,140,190,.17) 2px, transparent 2px), linear-gradient(90deg, rgba(96,140,190,.17) 2px, transparent 2px);
+  background-size: 36px 36px; background-position: 12px 10px; }
+.t-sketch .paper { background: #fffdf7; }
+.t-sketch .lined { background-color: #fffdf8;
+  background-image: linear-gradient(90deg, transparent 78px, rgba(220,80,70,.55) 78px, rgba(220,80,70,.55) 81px, transparent 81px),
+                    repeating-linear-gradient(transparent 0 58px, rgba(90,140,200,.28) 58px 60px); }
+.t-sketch .shadowed { filter: drop-shadow(0 6px 6px rgba(60,40,10,.18)); }
+.t-sketch .tape { position: absolute; height: 46px; z-index: 5; opacity: .9;
+  background: repeating-linear-gradient(45deg, rgba(255,255,255,.28) 0 10px, transparent 10px 20px), var(--tape, rgba(240,196,110,.75)); }
+.t-sketch .sticky { box-shadow: 0 16px 16px -12px rgba(60,40,10,.4), 0 1px 1px rgba(0,0,0,.08); }
+.t-sketch .hl { background: linear-gradient(transparent 50%, var(--hl, rgba(255,222,0,.75)) 50%, var(--hl, rgba(255,222,0,.75)) 90%, transparent 90%); padding: 0 8px; }
+.t-sketch .redpen { color: #d6372b; }
+.t-sketch .wavy { text-decoration: underline wavy #d6372b 3px; text-underline-offset: 8px; }
+
+/* ============ 2. 新粗野主义 ============ */
+.t-brutal { background: #fff3df; color: #111; font-family: 'Noto Sans SC', sans-serif; }
+.t-brutal .card { background: #fff; border: 4px solid #111; border-radius: 26px; box-shadow: 9px 9px 0 #111; }
+.t-brutal .pill { border: 4px solid #111; border-radius: 999px; padding: 6px 20px; font-weight: 900; background: #fff; }
+.t-brutal .head { font-family: 'Smiley', 'Noto Sans SC', sans-serif; }
+.t-brutal .btn { border: 4px solid #111; border-radius: 24px; box-shadow: 9px 9px 0 #111; display: flex; align-items: center; justify-content: center; font-family: 'Smiley', sans-serif; }
+
+/* ============ 3. Win98 画图 ============ */
+.t-win { background: #008080; color: #000; font-family: 'FusionPixel', monospace; font-size: 24px; -webkit-font-smoothing: none; }
+.t-win .raised { background: #c0c0c0; box-shadow: inset -2px -2px #0a0a0a, inset 2px 2px #ffffff, inset -4px -4px #808080, inset 4px 4px #dfdfdf; }
+.t-win .sunken { background: #fff; box-shadow: inset 2px 2px #808080, inset -2px -2px #ffffff, inset 4px 4px #0a0a0a, inset -4px -4px #dfdfdf; }
+.t-win .sunken-grey { background: #c0c0c0; box-shadow: inset 2px 2px #808080, inset -2px -2px #ffffff; }
+.t-win .titlebar { background: linear-gradient(90deg, #000080, #1084d0); color: #fff; height: 52px; display: flex; align-items: center; padding: 0 6px 0 10px; gap: 10px; }
+.t-win .titlebar .tb-btn { width: 40px; height: 36px; display: flex; align-items: center; justify-content: center; color: #000; }
+.t-win .group { position: absolute; border: 2px solid #808080; box-shadow: 2px 2px 0 #fff, inset 2px 2px 0 #fff; }
+.t-win .group > .legend { position: absolute; top: -16px; left: 18px; background: #c0c0c0; padding: 0 8px; line-height: 28px; }
+.t-win .btn { display: flex; align-items: center; justify-content: center; }
+.t-win .lcd { background: #000; color: #ff1a1a; font-size: 72px; line-height: 72px; padding: 6px 10px 2px; box-shadow: inset 2px 2px #808080, inset -2px -2px #fff; letter-spacing: 4px; }
+
+/* ============ 4. Riso 报纸拼贴 ============ */
+.t-riso { background: #f1e8d4; color: #1d1b1a; font-family: 'Noto Serif SC', serif; }
+.t-riso .ink-red { color: #e5452c; } .t-riso .ink-blue { color: #2b4e9c; }
+.t-riso .dots-blue { background-image: radial-gradient(#2b4e9c 36%, transparent 39%); background-size: 12px 12px; }
+.t-riso .dots-red { background-image: radial-gradient(#e5452c 34%, transparent 37%); background-size: 10px 10px; }
+.t-riso .mis { position: relative; z-index: 0; }
+.t-riso .mis::before { content: attr(data-t); position: absolute; left: 0; top: 0; transform: translate(4px, 3px); color: var(--mis, #e5452c); mix-blend-mode: multiply; z-index: -1; white-space: nowrap; width: 100%; }
+.t-riso .rule2 { border-top: 6px solid #1d1b1a; border-bottom: 2px solid #1d1b1a; height: 14px; }
+.t-riso .stamp { border: 5px solid #e5452c; color: #e5452c; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; mix-blend-mode: multiply; }
+.t-riso .multiply { mix-blend-mode: multiply; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="module">
+// ---------------------------------------------------------------- data (same for every style)
+const DATA = {
+  verbal: { mode: '口头描述', ruleTitle: '描述任务', rule: '用语言描述目标，让队友猜出来。', round: '第 4 轮', score: '红队 14 : 11 蓝队', role: '描述者 阿杰', seconds: 51, last: false,
+    answer: '只在房门关上之后才想起来的钥匙', forbidLabel: '禁说', forbid: ['门锁', '口袋'],
+    twist: { title: '招领广播', text: '用失物招领广播的语气，描述两条能让人认出来的线索。' },
+    voice: { on: true, text: '语音中 · 阿杰正在描述' } },
+  charades: { mode: '动作表演', ruleTitle: '禁止说话', rule: '只能用动作表演，不能说话或写字。', round: '第 5 轮', score: '蓝队 13 : 14 红队', role: '表演者 小周', seconds: 8, last: true,
+    answer: '一手按住被风掀起的地图一手找路', forbidLabel: '禁止', forbid: ['说话', '写字'],
+    twist: { title: '局部特写', text: '做完一遍后，把最能说明答案的那个小动作夸张地再演一次。' },
+    voice: { on: false, text: '同屏模式 · 表演者静音' } },
+  draw: { mode: '你画我猜', round: '第 3 轮', seconds: 47, word: '伞', hint: '1 个字 · 日常物品', drawer: '阿杰',
+    guesses: [{ who: '小周', text: '蘑菇？' }, { who: '大熊', text: '水母' }, { who: '小周', text: '台灯！' }, { who: '莉莉', ok: true, text: '猜对了 +3' }],
+    players: [{ name: '阿杰', score: 12, tag: '画手', speaking: true }, { name: '小周', score: 9 }, { name: '莉莉', score: 15, ok: true }, { name: '大熊', score: 6 }] },
+};
+
+// ---------------------------------------------------------------- helpers
+function rng(seed) { let a = 0; for (const c of String(seed)) a = (Math.imul(a ^ c.charCodeAt(0), 2654435761) >>> 0); return () => { a = (a + 0x6d2b79f5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const mctx = document.createElement('canvas').getContext('2d');
+
+// Same rule as design/spy-titles/src/layout.mjs, but measured with the real font.
+function fitAnswer(text, { w, h, tiers, font, lh = 1.12, singleMin = 112 }) {
+  const chars = Array.from(text);
+  const width = (s, size) => { mctx.font = font(size); return mctx.measureText(s).width; };
+  for (const size of tiers) {
+    if (size < singleMin) break;
+    if (width(text, size) <= w && size * lh <= h) return { size, lines: [text] };
+  }
+  for (const size of tiers) {
+    for (let n = 1; n <= 6; n++) {
+      const base = Math.floor(chars.length / n), extra = chars.length % n;
+      const lines = []; let k = 0;
+      for (let i = 0; i < n; i++) { const c = base + (i < extra ? 1 : 0); lines.push(chars.slice(k, k + c).join('')); k += c; }
+      if (n * size * lh > h) break;
+      if (lines.every((l) => width(l, size) <= w)) return { size, lines };
+    }
+  }
+  return { size: tiers[tiers.length - 1], lines: [text], overflow: true };
+}
+function answerHTML(text, opts, lineAttr = () => '') {
+  const f = fitAnswer(text, opts);
+  return { f, html: f.lines.map((l, i) => `<div class="answer-line" ${lineAttr(l, i)} style="font-size:${f.size}px;line-height:${Math.round(f.size * (opts.lh || 1.12))}px">${esc(l)}</div>`).join('') };
+}
+
+function tornClip(w, h, edges, seed, amp = 7, step = 18) {
+  const r = rng(seed); const pts = [];
+  const jag = (on) => (on ? (r() * amp) : 0);
+  for (let x = 0; x <= w; x += step) pts.push([Math.min(x, w), jag(edges.includes('t'))]);
+  for (let y = 0; y <= h; y += step) pts.push([w - jag(edges.includes('r')), Math.min(y, h)]);
+  for (let x = w; x >= 0; x -= step) pts.push([Math.max(x, 0), h - jag(edges.includes('b'))]);
+  for (let y = h; y >= 0; y -= step) pts.push([jag(edges.includes('l')), Math.max(y, 0)]);
+  return `clip-path:polygon(${pts.map(([x, y]) => `${x.toFixed(1)}px ${y.toFixed(1)}px`).join(',')})`;
+}
+function tapeClip(w, h, seed) {
+  const r = rng(seed); const pts = [];
+  for (let y = 0; y <= h; y += 6) pts.push([r() * 6, y]);
+  for (let y = h; y >= 0; y -= 6) pts.push([w - r() * 6, y]);
+  return `clip-path:polygon(${pts.map(([x, y]) => `${x.toFixed(1)}px ${y.toFixed(1)}px`).join(',')})`;
+}
+function tape(x, y, w, rot, color, seed) { return `<div class="tape" style="left:${x}px;top:${y}px;width:${w}px;transform:rotate(${rot}deg);--tape:${color};${tapeClip(w, 46, seed)}"></div>`; }
+function wobblyCircle(cx, cy, r, seed, loops = 1.15) {
+  const R = rng(seed); let d = ''; const n = 40;
+  for (let i = 0; i <= n * loops; i++) {
+    const a = -1.9 + (i / n) * Math.PI * 2; const k = r + (R() - 0.5) * r * 0.06 + i * 0.12;
+    d += `${i ? 'L' : 'M'}${(cx + Math.cos(a) * k * 1.04).toFixed(1)} ${(cy + Math.sin(a) * k).toFixed(1)}`;
+  }
+  return d;
+}
+
+// Icons, 100x100 grid. Each style renders them its own way.
+const ICON = {
+  mic: { fill: 'M35 12 Q35 6 50 6 Q65 6 65 12 L65 52 Q65 62 50 62 Q35 62 35 52 Z', stroke: 'M24 44 Q24 76 50 76 Q76 76 76 44 M50 76 L50 90 M34 92 L66 92' },
+  hand: { fill: 'M30 92 L28 58 L16 44 Q12 37 19 35 L32 45 L32 20 Q32 13 38 13 Q44 13 44 20 L45 41 L46 12 Q46 6 52 6 Q58 6 58 12 L58 41 L60 16 Q60 10 66 10 Q72 10 72 16 L71 44 L74 30 Q74 24 79 24 Q84 24 84 30 L82 62 Q80 80 70 92 Z', stroke: '' },
+  pencil: { fill: 'M20 70 L64 26 L76 38 L32 82 L16 86 Z', stroke: 'M58 32 L70 44' },
+  eraser: { fill: 'M18 62 L50 30 L78 58 L52 84 L34 84 Z', stroke: 'M34 46 L62 74 M24 90 L80 90' },
+  undo: { fill: '', stroke: 'M30 38 L16 52 L30 66 M18 52 L60 52 Q84 52 84 72 Q84 88 62 88' },
+  trash: { fill: 'M26 30 L74 30 L68 90 L32 90 Z', stroke: 'M18 24 L82 24 M40 16 L60 16 M42 42 L44 80 M58 42 L56 80' },
+  bucket: { fill: 'M22 46 L52 16 L82 46 L52 76 Z', stroke: 'M84 56 Q92 70 84 76 Q76 70 84 56' },
+  speaker: { fill: 'M14 38 L32 38 L52 20 L52 80 L32 62 L14 62 Z', stroke: 'M64 36 Q74 50 64 64 M74 26 Q90 50 74 74' },
+  info: { fill: 'M50 6 A44 44 0 1 1 49.9 6 Z', stroke: '' },
+};
+function iconSVG(name, { fill = '#111', stroke = '#111', sw = 7, size = 64, extra = '' } = {}) {
+  const i = ICON[name];
+  return `<svg width="${size}" height="${size}" viewBox="0 0 100 100" style="display:block">${i.fill ? `<path d="${i.fill}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}" stroke-linejoin="round"/>` : ''}${i.stroke ? `<path d="${i.stroke}" fill="none" stroke="${stroke}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>` : ''}${extra}</svg>`;
+}
+
+// ---------------------------------------------------------------- doodle (a player's drawing of 伞)
+function umbrella() {
+  const P = { canopy: [], scallop: [], ribs: [], shaft: [], hook: [], drops: [] };
+  for (let i = 0; i <= 40; i++) { const a = Math.PI + (Math.PI * i) / 40; P.canopy.push([0.5 + 0.36 * Math.cos(a), 0.47 + 0.33 * Math.sin(a)]); }
+  const tips = [0.14, 0.38, 0.62, 0.86];
+  for (let s = 3; s > 0; s--) { const a = tips[s - 1], b = tips[s]; for (let i = 0; i <= 12; i++) { const t = i / 12; const x = b - (b - a) * t; P.scallop.push([x, 0.47 - Math.sin(Math.PI * t) * 0.05]); } }
+  P.ribs = [[[0.5, 0.14], [0.43, 0.3], [0.38, 0.47]], [[0.5, 0.14], [0.57, 0.3], [0.62, 0.47]]];
+  P.shaft = [[0.5, 0.1], [0.5, 0.8]];
+  for (let i = 0; i <= 12; i++) { const a = (Math.PI * i) / 12; P.hook.push([0.45 + 0.05 * Math.cos(a), 0.8 + 0.05 * Math.sin(a)]); }
+  P.drops = [[0.14, 0.18], [0.84, 0.16], [0.22, 0.66], [0.8, 0.64], [0.92, 0.4], [0.68, 0.84]];
+  return P;
+}
+function jitter(pts, amp, seed) { const r = rng(seed); return pts.map(([x, y]) => [x + (r() - 0.5) * amp, y + (r() - 0.5) * amp]); }
+function strokePath(g, pts, W, H, ox = 0, oy = 0) { g.beginPath(); pts.forEach(([x, y], i) => (i ? g.lineTo(x * W + ox, y * H + oy) : g.moveTo(x * W + ox, y * H + oy))); g.stroke(); }
+function canopyPath(g, P, W, H, ox = 0, oy = 0) { g.beginPath(); [...P.canopy, ...P.scallop].forEach(([x, y], i) => (i ? g.lineTo(x * W + ox, y * H + oy) : g.moveTo(x * W + ox, y * H + oy))); g.closePath(); }
+function drop(g, x, y, s) { g.beginPath(); g.moveTo(x, y - s); g.quadraticCurveTo(x + s * 0.8, y + s * 0.2, x, y + s * 0.6); g.quadraticCurveTo(x - s * 0.8, y + s * 0.2, x, y - s); g.fill(); }
+
+function drawDoodle(canvas, style) {
+  const W = canvas.width, H = canvas.height, g = canvas.getContext('2d'); const P = umbrella();
+  g.lineCap = 'round'; g.lineJoin = 'round';
+  const lines = (amp, seed, ox = 0, oy = 0) => {
+    strokePath(g, jitter(P.canopy, amp, seed + 'c'), W, H, ox, oy); strokePath(g, jitter(P.scallop, amp, seed + 's'), W, H, ox, oy);
+    P.ribs.forEach((r, i) => strokePath(g, jitter(r, amp, seed + 'r' + i), W, H, ox, oy));
+    strokePath(g, jitter(P.shaft, amp * 0.6, seed + 'h'), W, H, ox, oy); strokePath(g, jitter(P.hook, amp, seed + 'k'), W, H, ox, oy);
+  };
+  if (style === 'sketch') {
+    g.save(); canopyPath(g, P, W, H); g.clip();
+    g.strokeStyle = 'rgba(255,110,150,.55)'; g.lineWidth = 16; g.beginPath();
+    for (let x = -H; x < W; x += 22) { g.moveTo(x, H * 0.1); g.lineTo(x + H * 0.45, H * 0.5); }
+    g.stroke(); g.restore();
+    g.strokeStyle = 'rgba(55,55,60,.85)'; g.lineWidth = 5; lines(0.006, 'a'); g.strokeStyle = 'rgba(55,55,60,.45)'; g.lineWidth = 3; lines(0.01, 'b', 2, 1);
+    g.fillStyle = 'rgba(70,130,210,.75)'; P.drops.forEach(([x, y]) => drop(g, x * W, y * H, 18));
+  } else if (style === 'brutal') {
+    g.fillStyle = '#ffd23f'; canopyPath(g, P, W, H); g.fill();
+    g.strokeStyle = '#111'; g.lineWidth = 12; lines(0.004, 'a');
+    g.fillStyle = '#1f3fff'; P.drops.forEach(([x, y]) => drop(g, x * W, y * H, 20));
+  } else if (style === 'win') {
+    g.imageSmoothingEnabled = false;
+    g.fillStyle = '#ffff00'; canopyPath(g, P, W, H); g.fill();
+    g.strokeStyle = '#000'; g.lineWidth = 2; lines(0.004, 'a');
+    g.fillStyle = '#0000ff'; P.drops.forEach(([x, y]) => drop(g, x * W, y * H, 5));
+    quantize(g, W, H, ['#ffffff', '#000000', '#ffff00', '#0000ff']);
+  } else if (style === 'riso') {
+    g.save(); canopyPath(g, P, W, H, 7, 5); g.clip(); g.fillStyle = '#2b4e9c';
+    for (let y = 0; y < H; y += 12) for (let x = (y / 12) % 2 ? 6 : 0; x < W; x += 12) { g.beginPath(); g.arc(x, y, 4.2, 0, 7); g.fill(); }
+    g.restore();
+    g.globalCompositeOperation = 'multiply';
+    g.strokeStyle = '#e5452c'; g.lineWidth = 6; lines(0.004, 'a', 5, 3);
+    g.strokeStyle = '#1d1b1a'; g.lineWidth = 7; lines(0.004, 'a');
+    g.fillStyle = '#2b4e9c'; P.drops.forEach(([x, y]) => drop(g, x * W + 7, y * H + 5, 18));
+  }
+}
+function quantize(g, W, H, palette) {
+  const pal = palette.map((h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16)));
+  const d = g.getImageData(0, 0, W, H); const a = d.data;
+  for (let i = 0; i < a.length; i += 4) {
+    if (a[i + 3] < 110) { a[i + 3] = 0; continue; }
+    let best = pal[0], bd = 1e9;
+    for (const p of pal) { const dd = (p[0] - a[i]) ** 2 + (p[1] - a[i + 1]) ** 2 + (p[2] - a[i + 2]) ** 2; if (dd < bd) { bd = dd; best = p; } }
+    a[i] = best[0]; a[i + 1] = best[1]; a[i + 2] = best[2]; a[i + 3] = 255;
+  }
+  g.putImageData(d, 0, 0);
+}
+async function pixelIcon(el) {
+  const px = +el.dataset.px, scale = +el.dataset.scale, name = el.dataset.icon;
+  const svg = iconSVG(name, { fill: el.dataset.fill || '#000', stroke: el.dataset.stroke || '#000', sw: +(el.dataset.sw || 9), size: 100 });
+  const img = new Image(); img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg.replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" ')); await img.decode();
+  const c = document.createElement('canvas'); c.width = c.height = px; c.className = 'pix'; const g = c.getContext('2d');
+  g.drawImage(img, 0, 0, px, px); quantize(g, px, px, [el.dataset.fill || '#000000', el.dataset.stroke || '#000000', '#ffffff']);
+  c.style.width = c.style.height = px * scale + 'px'; el.replaceWith(c);
+}
+
+// ================================================================ 1. 手账便签
+const SK = {
+  font: (s) => `${s}px KuaiLe`,
+  top(d) {
+    const red = d.last ? '#d6372b' : '#2a2a2a';
+    return `<div class="abs" style="left:34px;top:186px;font-size:30px">${esc(d.round)} · ${esc(d.score)}</div>
+    <div class="abs" style="left:34px;top:228px;font-size:24px;color:#6b6257">${esc(d.role || '')}</div>
+    <svg class="abs" style="left:560px;top:168px" width="170" height="150"><path d="${wobblyCircle(85, 75, 58, 'timer' + d.last)}" fill="none" stroke="${red}" stroke-width="${d.last ? 7 : 5}" stroke-linecap="round"/></svg>
+    <div class="abs" style="left:560px;top:196px;width:170px;text-align:center;font-size:${d.last ? 76 : 64}px;line-height:90px;color:${red}">${d.seconds}</div>
+    ${d.last ? `<div class="abs redpen" style="left:300px;top:250px;font-size:40px;transform:rotate(-6deg)">还剩 8 秒!!</div>` : ''}`;
+  },
+  round(d, key) {
+    const icon = key === 'verbal' ? 'mic' : 'hand';
+    const ans = answerHTML(d.answer, { w: 560, h: 330, tiers: [140, 120, 104, 88, 76, 64, 56], font: SK.font, lh: 1.1 });
+    return `${SK.top(d)}
+    <div class="abs shadowed" style="left:22px;top:330px;width:706px;height:150px;transform:rotate(-1.6deg)"><div class="paper" style="width:100%;height:100%;${tornClip(706, 150, 'tb', 'mode' + key)}"></div></div>
+    ${tape(10, 318, 120, -14, 'rgba(140,205,190,.8)', 'tp1')}
+    <div class="abs row" style="left:58px;top:350px;gap:22px;transform:rotate(-1.6deg)">${iconSVG(icon, { fill: 'none', stroke: '#2a2a2a', sw: 5, size: 100 })}
+      <div><div style="font-size:72px;line-height:78px"><span class="hl" style="--hl:${key === 'verbal' ? 'rgba(255,222,0,.75)' : 'rgba(120,220,170,.75)'}">${esc(d.mode)}</span></div>
+      <div style="font-size:28px;color:#5a5249;margin-top:6px">${esc(d.ruleTitle)}：${esc(d.rule)}</div></div></div>
+    <div class="abs shadowed" style="left:30px;top:516px;width:690px;height:510px;transform:rotate(0.8deg)"><div class="lined" style="width:100%;height:100%;${tornClip(690, 510, 't', 'card' + key, 9, 14)}"></div></div>
+    ${tape(40, 500, 150, -6, 'rgba(240,196,110,.8)', 'tp2')}${tape(560, 500, 150, 7, 'rgba(245,160,180,.75)', 'tp3')}
+    <div class="abs" style="left:30px;top:516px;width:690px;height:510px;transform:rotate(0.8deg)">
+      <div class="abs redpen" style="left:100px;top:46px;font-size:28px">你的目标 · 仅你可见</div>
+      <div class="abs" style="left:96px;top:96px;width:560px;height:330px;display:flex;flex-direction:column;justify-content:center;color:#1f2a44">${ans.html}</div>
+      <div class="abs row" style="left:100px;top:440px;gap:26px;font-size:32px"><span class="redpen">${esc(d.forbidLabel)}：</span>${d.forbid.map((t) => `<span class="wavy">${esc(t)}</span>`).join('')}</div>
+    </div>
+    <div class="abs sticky" style="left:46px;top:1062px;width:660px;height:226px;background:#ffe27a;transform:rotate(-1.4deg);padding:30px 34px">
+      <div class="row" style="gap:16px"><span class="redpen" style="font-size:28px;border:3px solid #d6372b;border-radius:10px;padding:0 10px">脑洞指令</span><span style="font-size:38px">${esc(d.twist.title)}</span></div>
+      <div style="font-size:30px;line-height:44px;margin-top:14px;color:#3a3226">${esc(d.twist.text)}</div></div>
+    ${tape(300, 1044, 140, 3, 'rgba(255,255,255,.55)', 'tp4')}
+    <div class="abs row" style="left:40px;top:1318px;gap:12px;font-size:26px;color:${d.voice.on ? '#2a7a54' : '#8a7f70'}">${iconSVG(d.voice.on ? 'speaker' : 'mic', { fill: 'none', stroke: 'currentColor', sw: 6, size: 40 })}${esc(d.voice.text)}</div>
+    <div class="abs sticky" style="left:40px;top:1384px;width:250px;height:150px;background:#ffc2cf;transform:rotate(-2.5deg);display:flex;align-items:center;justify-content:center;font-size:56px">跳过</div>
+    <div class="abs sticky" style="left:318px;top:1372px;width:394px;height:170px;background:#a8e6c4;transform:rotate(1.5deg);display:flex;align-items:center;justify-content:center;font-size:76px">猜对 ✓</div>
+    ${tape(460, 1352, 110, -4, 'rgba(255,255,255,.6)', 'tp5')}`;
+  },
+  draw(d) {
+    const notes = [['#ffe27a', -3], ['#ffc2cf', 2], ['#bfe3ff', -1.5], ['#a8e6c4', 2.5]];
+    return `<div class="abs" style="left:34px;top:186px;font-size:30px">${esc(d.round)} · ${esc(d.mode)} · 仅你可见</div>
+    <svg class="abs" style="left:560px;top:168px" width="170" height="150"><path d="${wobblyCircle(85, 75, 58, 'dt')}" fill="none" stroke="#2a2a2a" stroke-width="5" stroke-linecap="round"/></svg>
+    <div class="abs" style="left:560px;top:196px;width:170px;text-align:center;font-size:64px;line-height:90px">${d.seconds}</div>
+    <div class="abs" style="left:34px;top:250px;font-size:44px">你要画：<span class="hl">${esc(d.word)}</span><span style="font-size:26px;color:#6b6257;margin-left:16px">${esc(d.hint)}</span></div>
+    <div class="abs shadowed" style="left:24px;top:340px;width:702px;height:740px;transform:rotate(-0.6deg)"><div class="paper" style="width:100%;height:100%;${tornClip(702, 740, 'b', 'canvas', 8, 16)}"><canvas data-doodle="sketch" width="560" height="560" style="position:absolute;left:70px;top:70px;width:560px;height:560px"></canvas></div></div>
+    ${tape(16, 324, 130, -12, 'rgba(140,205,190,.8)', 'dt1')}${tape(600, 324, 130, 10, 'rgba(240,196,110,.8)', 'dt2')}
+    <div class="abs row" style="left:30px;top:1104px;gap:10px">${['#2a2a2a', '#e04b3c', '#3b7ddd', '#3bb273', '#f2b632'].map((c, i) => `<div style="width:50px;height:50px;border-radius:50%;background:${c};border:${i === 4 ? '5px solid #2a2a2a' : '3px solid rgba(0,0,0,.15)'}"></div>`).join('')}
+      <div style="width:18px"></div>${['pencil', 'bucket', 'eraser', 'undo', 'trash'].map((n, i) => `<div style="padding:6px;border-radius:12px;${i === 1 ? 'background:rgba(255,222,0,.6)' : ''}">${iconSVG(n, { fill: 'none', stroke: '#2a2a2a', sw: 6, size: 44 })}</div>`).join('')}</div>
+    ${d.guesses.map((gs, i) => `<div class="abs sticky" style="left:${36 + i * 172}px;top:${1196 + (i % 2) * 12}px;width:160px;height:150px;background:${notes[i][0]};transform:rotate(${notes[i][1]}deg);padding:14px 16px">
+      <div style="font-size:22px;color:#6b6257">${esc(gs.who)}</div><div style="font-size:${gs.ok ? 34 : 40}px;margin-top:8px;${gs.ok ? 'color:#2a7a54' : ''}">${esc(gs.text)}</div></div>`).join('')}
+    <div class="abs row" style="left:30px;top:1390px;gap:22px">${d.players.map((p, i) => `<div style="text-align:center;width:120px"><div style="position:relative;width:96px;height:96px;margin:0 auto">
+      <svg width="96" height="96" style="position:absolute;inset:0"><path d="${wobblyCircle(48, 48, 40, 'av' + i, 1.05)}" fill="${['#ffe27a', '#ffc2cf', '#bfe3ff', '#a8e6c4'][i]}" stroke="${p.speaking ? '#2a7a54' : '#2a2a2a'}" stroke-width="${p.speaking ? 6 : 4}"/></svg>
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:40px">${esc(p.name[1])}</div>
+      ${p.speaking ? `<div style="position:absolute;right:-18px;top:-6px">${iconSVG('speaker', { fill: '#2a7a54', stroke: '#2a7a54', sw: 4, size: 38 })}</div>` : ''}</div>
+      <div style="font-size:24px;margin-top:4px">${esc(p.name)} ${p.score}${p.ok ? ' ✓' : ''}</div>${p.tag ? `<div class="redpen" style="font-size:20px">${esc(p.tag)}</div>` : ''}</div>`).join('')}
+      <div class="sticky" style="margin-left:6px;width:126px;height:110px;background:#a8e6c4;transform:rotate(2deg);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:24px">${iconSVG('mic', { fill: 'none', stroke: '#2a2a2a', sw: 6, size: 52 })}按住说话</div></div>`;
+  },
+};
+
+// ================================================================ 2. 新粗野主义
+const BR = {
+  font: (s) => `900 ${s}px 'Noto Sans SC'`,
+  modeColor: { verbal: '#ff6b5b', charades: '#1f3fff' },
+  top(d, label) {
+    const t = d.last ? '#ff6b5b' : '#1f3fff';
+    return `<div class="abs pill" style="left:30px;top:196px;font-size:26px">${esc(label)}</div>
+    <div class="abs" style="left:574px;top:178px;width:146px;height:146px;border-radius:50%;background:${t};border:4px solid #111;box-shadow:7px 7px 0 #111;display:flex;align-items:center;justify-content:center;color:#fff;transform:rotate(${d.last ? -6 : 0}deg)"><span class="head" style="font-size:${d.last ? 84 : 72}px;line-height:1">${d.seconds}</span></div>
+    ${d.last ? `<div class="abs pill" style="left:360px;top:270px;background:#ffd23f;font-size:30px;transform:rotate(-4deg)">最后 8 秒！</div>` : ''}`;
+  },
+  round(d, key) {
+    const c = BR.modeColor[key];
+    const ans = answerHTML(d.answer, { w: 600, h: 330, tiers: [150, 132, 112, 96, 80, 68, 60, 56], font: BR.font });
+    const remain = Math.max(0.04, d.seconds / 60);
+    return `${BR.top(d, `${d.round} · ${d.score}`)}
+    <div class="abs card" style="left:30px;top:344px;width:690px;height:156px;background:${c};display:flex;align-items:center;gap:22px;padding:0 26px;color:${key === 'verbal' ? '#111' : '#fff'}">
+      <div style="width:108px;height:108px;border-radius:50%;background:#fff;border:4px solid #111;display:flex;align-items:center;justify-content:center;flex:none">${iconSVG(key === 'verbal' ? 'mic' : 'hand', { fill: key === 'verbal' ? '#ffd23f' : '#ff6b5b', stroke: '#111', sw: 7, size: 74 })}</div>
+      <div><div class="head" style="font-size:70px;line-height:76px">${esc(d.mode)}</div><div style="font-size:26px;font-weight:700">${esc(d.rule)}</div></div></div>
+    <div class="abs" style="left:30px;top:528px;width:690px;height:26px;border:4px solid #111;border-radius:999px;background:#fff;overflow:hidden"><div style="width:${remain * 100}%;height:100%;background:${d.last ? '#ff6b5b' : '#3ddc97'};border-right:4px solid #111"></div></div>
+    <div class="abs card" style="left:30px;top:584px;width:690px;height:470px">
+      <div class="abs pill" style="left:24px;top:-26px;background:#ffd23f;font-size:24px">仅你可见</div>
+      <div class="abs" style="left:41px;top:40px;width:600px;height:330px;display:flex;flex-direction:column;justify-content:center;font-weight:900">${ans.html}</div>
+      <div class="abs row" style="left:40px;top:390px;gap:14px"><span class="pill" style="background:#ff6b5b;font-size:26px;padding:4px 16px">${esc(d.forbidLabel)}</span>${d.forbid.map((t) => `<span class="pill" style="font-size:28px;padding:4px 18px;text-decoration:line-through 4px #ff6b5b">${esc(t)}</span>`).join('')}</div></div>
+    <div class="abs card" style="left:44px;top:1090px;width:668px;height:200px;background:#ffd23f;transform:rotate(-1.2deg);padding:26px 30px">
+      <div class="row" style="gap:16px"><span class="pill" style="background:#111;color:#fff;font-size:24px;padding:4px 16px">脑洞指令</span><span style="font-size:36px;font-weight:900">${esc(d.twist.title)}</span></div>
+      <div style="font-size:29px;line-height:42px;font-weight:600;margin-top:12px">${esc(d.twist.text)}</div></div>
+    <div class="abs pill row" style="left:30px;top:1318px;gap:10px;font-size:24px;background:${d.voice.on ? '#3ddc97' : '#fff'}">${iconSVG(d.voice.on ? 'speaker' : 'mic', { fill: '#111', stroke: '#111', sw: 5, size: 30 })}${esc(d.voice.text)}</div>
+    <div class="abs btn" style="left:30px;top:1392px;width:250px;height:148px;background:#fff;font-size:60px">跳过</div>
+    <div class="abs btn" style="left:310px;top:1392px;width:410px;height:148px;background:#ffd23f;font-size:84px">猜对</div>`;
+  },
+  draw(d) {
+    return `${BR.top(d, `${d.round} · ${d.mode}`)}
+    <div class="abs card row" style="left:30px;top:262px;width:510px;height:84px;padding:0 22px;gap:14px;background:#ff6b5b"><span class="head" style="font-size:48px">你要画：${esc(d.word)}</span><span style="font-size:22px;font-weight:700">${esc(d.hint)}</span></div>
+    <div class="abs card" style="left:30px;top:376px;width:690px;height:660px;overflow:hidden"><canvas data-doodle="brutal" width="560" height="560" style="position:absolute;left:61px;top:42px;width:560px;height:560px"></canvas></div>
+    <div class="abs card row" style="left:30px;top:1062px;width:690px;height:104px;padding:0 18px;gap:12px;border-radius:22px">${['#111', '#ff6b5b', '#1f3fff', '#3ddc97', '#ffd23f', '#fff'].map((c, i) => `<div style="width:56px;height:56px;border-radius:14px;background:${c};border:4px solid #111;${i === 4 ? 'box-shadow:0 0 0 5px #fff,0 0 0 9px #111' : ''}"></div>`).join('')}
+      <div style="width:6px;height:60px;background:#111;border-radius:3px"></div>${['pencil', 'bucket', 'eraser', 'undo'].map((n, i) => `<div style="width:62px;height:62px;border:4px solid #111;border-radius:14px;display:flex;align-items:center;justify-content:center;background:${i === 1 ? '#ffd23f' : '#fff'}">${iconSVG(n, { fill: '#fff', stroke: '#111', sw: 7, size: 42 })}</div>`).join('')}</div>
+    <div class="abs" style="left:30px;top:1196px;width:400px">${d.guesses.map((gs) => `<div class="row" style="gap:12px;margin-bottom:10px"><span style="font-size:22px;font-weight:900;width:70px">${esc(gs.who)}</span><span class="pill" style="font-size:28px;padding:2px 18px;background:${gs.ok ? '#3ddc97' : '#fff'}">${esc(gs.text)}</span></div>`).join('')}</div>
+    <div class="abs" style="left:440px;top:1200px;display:grid;grid-template-columns:1fr 1fr;gap:14px 18px">${d.players.map((p, i) => `<div class="row" style="gap:10px"><div style="width:62px;height:62px;border-radius:50%;border:4px solid #111;background:${['#ffd23f', '#ff6b5b', '#3ddc97', '#1f3fff'][i]};display:flex;align-items:center;justify-content:center;font-weight:900;font-size:28px;color:${i === 3 ? '#fff' : '#111'};${p.speaking ? 'box-shadow:0 0 0 5px #fff3df,0 0 0 9px #3ddc97' : ''}">${esc(p.name[1])}</div><div style="font-size:22px;font-weight:900;line-height:26px">${esc(p.name)}<br>${p.score}${p.ok ? ' ✓' : ''}</div></div>`).join('')}</div>
+    <div class="abs btn" style="left:30px;top:1444px;width:690px;height:104px;background:#3ddc97;font-size:44px;gap:16px">${iconSVG('mic', { fill: '#fff', stroke: '#111', sw: 7, size: 54 })}按住说话 · 阿杰正在说</div>`;
+  },
+};
+
+// ================================================================ 3. Win98 画图
+const WN = {
+  font: (s) => `${s}px FusionPixel`,
+  chrome(title, inner, statusCells) {
+    return `<div class="abs raised" style="left:8px;top:170px;width:734px;height:1390px;padding:6px">
+      <div class="titlebar"><span data-icon="${title.icon}" data-px="16" data-scale="2" data-fill="#ffff00" data-stroke="#000000"></span><span style="flex:1;font-size:24px">${esc(title.text)}</span>
+        ${['_', '□', '×'].map((s) => `<span class="tb-btn raised" style="font-size:24px">${s}</span>`).join('')}</div>
+      <div class="row" style="height:44px;gap:28px;padding:0 14px;font-size:24px">${['游戏(G)', '编辑(E)', '查看(V)', '帮助(H)'].map((m) => `<span><u>${m[0]}</u>${m.slice(1)}</span>`).join('')}</div>
+      <div style="position:relative;height:1220px">${inner}</div>
+      <div class="row" style="gap:6px;height:46px">${statusCells.map((c) => `<div class="sunken-grey" style="flex:${c.flex || 1};height:40px;padding:6px 10px;font-size:24px;white-space:nowrap;overflow:hidden">${c.text}</div>`).join('')}</div></div>`;
+  },
+  progress(frac, x, y, w) {
+    const n = Math.floor((w - 12) / 20); const on = Math.max(1, Math.round(n * frac));
+    return `<div class="abs sunken-grey" style="left:${x}px;top:${y}px;width:${w}px;height:36px;padding:6px;display:flex;gap:4px">${Array.from({ length: on }, () => '<div style="width:16px;height:24px;background:#000080"></div>').join('')}</div>`;
+  },
+  round(d, key) {
+    const ans = answerHTML(d.answer, { w: 620, h: 300, tiers: [144, 120, 96, 72, 60, 48], font: WN.font, lh: 1.15, singleMin: 96 });
+    const inner = `
+      <div class="group" style="left:16px;top:28px;width:686px;height:150px"><span class="legend">回合</span>
+        <div class="abs lcd" style="left:20px;top:28px">${String(d.seconds).padStart(3, '0')}</div>
+        <div class="abs" style="left:200px;top:26px;font-size:24px;line-height:34px">${esc(d.round)} · ${esc(d.score)}<br>${esc(d.role)}</div>
+        ${d.last ? `<div class="abs" style="left:200px;top:88px;width:466px;background:#ffffe1;border:2px solid #000;padding:8px 14px;font-size:24px;line-height:32px;box-shadow:4px 4px 0 rgba(0,0,0,.4);white-space:nowrap"><b>⚠ 时间快到了！</b>剩余 ${d.seconds} 秒</div>` : WN.progress(d.seconds / 60, 200, 96, 466)}</div>
+      <div class="group" style="left:16px;top:206px;width:686px;height:130px"><span class="legend">模式：${esc(d.mode)}</span>
+        <div class="abs" style="left:20px;top:22px"><span data-icon="${key === 'verbal' ? 'mic' : 'hand'}" data-px="24" data-scale="3" data-fill="${key === 'verbal' ? '#808080' : '#ffff00'}" data-stroke="#000000" data-sw="10"></span></div>
+        <div class="abs" style="left:110px;top:30px;font-size:48px">${esc(d.ruleTitle)}</div><div class="abs" style="left:110px;top:84px;font-size:24px">${esc(d.rule)}</div></div>
+      <div class="group" style="left:16px;top:364px;width:686px;height:470px"><span class="legend">目标（仅你可见）</span>
+        <div class="abs sunken" style="left:18px;top:26px;width:648px;height:340px;display:flex;flex-direction:column;justify-content:center;padding:0 10px">${ans.html}</div>
+        <div class="abs row" style="left:20px;top:390px;gap:18px;font-size:24px"><span style="color:#800000">${esc(d.forbidLabel)}：</span>${d.forbid.map((t) => `<span class="sunken" style="padding:6px 14px;text-decoration:line-through">${esc(t)}</span>`).join('')}</div></div>
+      <div class="group" style="left:16px;top:862px;width:686px;height:196px"><span class="legend">脑洞指令</span>
+        <div class="abs" style="left:20px;top:30px;width:56px;height:56px;border-radius:50%;background:#0000ff;color:#fff;display:flex;align-items:center;justify-content:center;font-size:48px;box-shadow:2px 2px 0 #000">i</div>
+        <div class="abs" style="left:96px;top:24px;width:570px;font-size:24px;line-height:34px"><b style="font-size:36px;line-height:48px">${esc(d.twist.title)}</b><br>${esc(d.twist.text)}</div></div>
+      <div class="abs raised btn" style="left:16px;top:1088px;width:300px;height:100px;font-size:36px">跳过(<u>N</u>)</div>
+      <div class="abs btn" style="left:346px;top:1084px;width:356px;height:108px;background:#c0c0c0;box-shadow:inset 0 0 0 2px #000, inset -4px -4px #0a0a0a, inset 4px 4px #fff, inset -6px -6px #808080, inset 6px 6px #dfdfdf;font-size:48px"><span style="outline:2px dotted #000;outline-offset:8px">猜对(<u>Y</u>)</span></div>
+      `;
+    return WN.chrome({ icon: key === 'verbal' ? 'mic' : 'hand', text: `开个脑洞.exe - ${d.mode}` }, inner, [{ text: d.voice.on ? '◆ 语音：已连接 · 阿杰 正在说话' : '◇ 语音：同屏模式', flex: 3 }, { text: d.last ? '⚠ 剩余 8 秒' : '4 人在线', flex: 1.3 }]);
+  },
+  draw(d) {
+    const tools = ['pencil', 'bucket', 'eraser', 'undo', 'trash', 'speaker'];
+    const pal = ['#000000', '#808080', '#800000', '#808000', '#008000', '#008080', '#000080', '#800080', '#ffffff', '#c0c0c0', '#ff0000', '#ffff00', '#00ff00', '#00ffff', '#0000ff', '#ff00ff'];
+    const inner = `
+      <div class="abs row" style="left:16px;top:12px;gap:14px;font-size:24px"><div class="lcd" style="font-size:48px;line-height:48px">${String(d.seconds).padStart(3, '0')}</div><span>你要画：<b style="font-size:48px">${esc(d.word)}</b>（${esc(d.hint)}）</span></div>
+      <div class="abs" style="left:16px;top:96px;width:104px;display:grid;grid-template-columns:48px 48px;gap:6px">${tools.map((n, i) => `<div class="${i === 1 ? 'sunken-grey' : 'raised'}" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;${i === 1 ? 'background:#dfdfdf' : ''}"><span data-icon="${n}" data-px="16" data-scale="2" data-fill="${i === 1 ? '#ffff00' : '#c0c0c0'}" data-stroke="#000000" data-sw="10"></span></div>`).join('')}</div>
+      <div class="abs sunken" style="left:126px;top:96px;width:576px;height:600px;padding:8px;background:#808080"><div style="width:560px;height:584px;background:#fff;position:relative"><canvas data-doodle="win" data-scale="4" width="132" height="132" class="pix" style="position:absolute;left:16px;top:20px;width:528px;height:528px"></canvas></div></div>
+      <div class="abs row" style="left:16px;top:712px;gap:8px"><div class="sunken-grey" style="width:68px;height:68px;position:relative"><div style="position:absolute;left:8px;top:8px;width:34px;height:34px;background:#ffff00;border:2px solid #000"></div><div style="position:absolute;left:26px;top:26px;width:34px;height:34px;background:#fff;border:2px solid #000;z-index:-1"></div></div>
+        <div style="display:grid;grid-template-columns:repeat(8,32px);gap:4px">${pal.map((c) => `<div class="sunken-grey" style="width:32px;height:32px;padding:4px"><div style="width:100%;height:100%;background:${c}"></div></div>`).join('')}</div></div>
+      <div class="group" style="left:16px;top:820px;width:420px;height:370px"><span class="legend">聊天室</span><div class="abs sunken" style="left:14px;top:24px;width:388px;height:330px;padding:12px;font-size:24px;line-height:40px">
+        ${d.guesses.map((gs) => `<div><span style="color:${gs.ok ? '#008000' : '#000080'}">&lt;${esc(gs.who)}&gt;</span> ${gs.ok ? '<b style="color:#008000">*** 猜对了！+3 ***</b>' : esc(gs.text)}</div>`).join('')}<div style="color:#808080">&lt;大熊&gt; ...</div></div></div>
+      <div class="group" style="left:452px;top:820px;width:250px;height:370px"><span class="legend">玩家</span><div class="abs sunken" style="left:12px;top:24px;width:224px;height:330px;padding:10px;font-size:24px;line-height:44px">
+        ${d.players.map((p) => `<div class="row" style="gap:8px">${p.speaking ? '<span style="color:#008000">◆</span>' : '<span style="color:#c0c0c0">◆</span>'}${esc(p.name)} <span style="margin-left:auto">${p.score}</span></div>`).join('')}<div style="margin-top:14px;font-size:24px;color:#808080">◆ = 正在说话</div></div></div>`;
+    return WN.chrome({ icon: 'pencil', text: '画图 - 你画我猜.bmp' }, inner, [{ text: `${d.round} · 画手：阿杰`, flex: 2 }, { text: '◆ 语音：已连接', flex: 1.6 }]);
+  },
+};
+
+// ================================================================ 4. Riso 报纸拼贴
+const RS = {
+  font: (s) => `900 ${s}px 'Noto Serif SC'`,
+  masthead(d, line) {
+    return `<div class="abs mis" data-t="开个脑洞日报" style="left:30px;top:180px;font-size:78px;font-weight:900;letter-spacing:6px;line-height:96px">开个脑洞日报</div>
+    <div class="abs rule2" style="left:30px;top:286px;width:690px"></div>
+    <div class="abs" style="left:30px;top:308px;width:690px;font-size:23px;display:flex;justify-content:space-between"><span>${esc(line)}</span><span class="ink-red">${d.voice?.on ? '● 语音直播中' : d.voice ? '○ 同屏版' : '● 语音直播中'}</span></div>
+    <div class="abs stamp" style="left:${d.last ? 566 : 580}px;top:${d.last ? 160 : 168}px;width:${d.last ? 144 : 128}px;height:${d.last ? 144 : 128}px;transform:rotate(-10deg);border-width:${d.last ? 7 : 5}px">
+      <span style="font-size:${d.last ? 76 : 60}px;font-weight:900;line-height:1">${d.seconds}</span><span style="font-size:22px;font-weight:700">秒</span></div>`;
+  },
+  round(d, key) {
+    const blue = key === 'charades';
+    const ans = answerHTML(d.answer, { w: 600, h: 320, tiers: [150, 132, 112, 96, 80, 68, 60, 56], font: RS.font }, (l) => `data-t="${esc(l)}"`);
+    return `${RS.masthead(d, `${d.round} · ${d.score} · ${d.role}`)}
+    ${d.last ? `<div class="abs" style="left:30px;top:356px;z-index:2;background:#e5452c;color:#f1e8d4;font-size:30px;font-weight:900;padding:4px 18px;transform:rotate(-2deg)">号外 · 最后 8 秒</div>` : ''}
+    <div class="abs ${blue ? 'dots-blue' : 'dots-red'} multiply" style="left:30px;top:${d.last ? 426 : 362}px;width:690px;height:${d.last ? 96 : 148}px"></div>
+    <div class="abs" style="left:30px;top:${d.last ? 426 : 362}px;width:690px;height:${d.last ? 96 : 148}px;display:flex;align-items:center;gap:20px;padding:0 22px">
+      <div style="flex:none;white-space:nowrap;background:#f1e8d4;padding:6px 18px;font-size:${d.last ? 44 : 56}px;font-weight:900">${esc(d.mode)}版</div>
+      <div style="background:#f1e8d4;padding:4px 12px;font-size:24px;font-weight:700">${esc(d.ruleTitle)}：${esc(d.rule)}</div></div>
+    <div class="abs" style="left:30px;top:536px;width:690px;height:500px;border-top:6px solid #1d1b1a;border-bottom:2px solid #1d1b1a">
+      <div class="abs ink-red" style="left:0;top:16px;font-size:24px;font-weight:900;letter-spacing:4px">头条 · 仅你可见</div>
+      <div class="abs" style="left:45px;top:60px;width:600px;height:320px;display:flex;flex-direction:column;justify-content:center;font-weight:900;--mis:${blue ? '#2b4e9c' : '#e5452c'}">${ans.html.replace(/class="answer-line"/g, 'class="answer-line mis"')}</div>
+      <div class="abs row" style="left:0;top:410px;gap:20px;font-size:30px;font-weight:700"><span style="background:#1d1b1a;color:#f1e8d4;padding:2px 14px">${esc(d.forbidLabel)}</span>${d.forbid.map((t) => `<span style="text-decoration:line-through 4px #e5452c">${esc(t)}</span>`).join('')}</div>
+      <div class="abs stamp" style="left:540px;top:380px;width:140px;height:90px;border-radius:10px;transform:rotate(8deg);font-size:36px;font-weight:900">绝密</div></div>
+    <div class="abs" style="left:30px;top:1064px;width:690px;height:232px;display:flex">
+      <div class="dots-blue multiply" style="width:26px"></div>
+      <div style="flex:1;padding:12px 0 0 22px"><div style="font-size:24px;font-weight:900" class="ink-blue">编者按 · 脑洞指令</div><div style="font-size:40px;font-weight:900;margin:2px 0 6px">${esc(d.twist.title)}</div><div style="font-size:29px;line-height:42px;font-weight:600">${esc(d.twist.text)}</div></div></div>
+    <div class="abs rule2" style="left:30px;top:1318px;width:690px"></div>
+    <div class="abs" style="left:30px;top:1370px;width:250px;height:160px;border:5px solid #1d1b1a;display:flex;align-items:center;justify-content:center;font-size:58px;font-weight:900">跳过</div>
+    <div class="abs dots-blue multiply" style="left:322px;top:1382px;width:400px;height:160px"></div>
+    <div class="abs" style="left:310px;top:1370px;width:400px;height:160px;background:#2b4e9c;display:flex;align-items:center;justify-content:center"><span class="mis" data-t="猜对" style="font-size:84px;font-weight:900;color:#f1e8d4;--mis:#e5452c">猜对</span></div>`;
+  },
+  draw(d) {
+    return `${RS.masthead(d, `${d.round} · ${d.mode} · 画手 阿杰`)}
+    <div class="abs" style="left:30px;top:356px;font-size:40px;font-weight:900">本期你要画：<span class="ink-red mis" data-t="${esc(d.word)}" style="--mis:#2b4e9c">${esc(d.word)}</span><span style="font-size:24px;font-weight:600;margin-left:14px">${esc(d.hint)} · 仅画手可见</span></div>
+    <div class="abs" style="left:30px;top:426px;width:690px;height:640px;border:3px solid #1d1b1a;background:#f6efdf"><canvas data-doodle="riso" width="540" height="540" style="position:absolute;left:72px;top:46px;width:540px;height:540px"></canvas>
+      <div class="abs" style="left:10px;bottom:6px;font-size:20px;font-style:italic">图：读者 阿杰 · 现场投稿</div></div>
+    <div class="abs row" style="left:30px;top:1088px;gap:14px">${[['墨', '#1d1b1a'], ['朱', '#e5452c'], ['靛', '#2b4e9c']].map(([n, c], i) => `<div style="width:76px;height:76px;background:${c};color:#f1e8d4;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:900;${i === 0 ? 'outline:4px solid #1d1b1a;outline-offset:5px' : ''}">${n}</div>`).join('')}
+      <div style="width:18px"></div>${['pencil', 'bucket', 'eraser', 'undo'].map((n) => `<div style="width:76px;height:76px;border:3px solid #1d1b1a;display:flex;align-items:center;justify-content:center">${iconSVG(n, { fill: 'none', stroke: '#1d1b1a', sw: 7, size: 50 })}</div>`).join('')}</div>
+    <div class="abs" style="left:30px;top:1196px;width:420px;border-top:6px solid #1d1b1a;padding-top:10px"><div style="font-size:24px;font-weight:900" class="ink-blue">读者来信</div>
+      ${d.guesses.map((gs) => `<div style="font-size:28px;line-height:46px;border-bottom:1px solid rgba(29,27,26,.35)"><b class="${gs.ok ? 'ink-red' : ''}">${esc(gs.who)}：</b>${gs.ok ? '<b class="ink-red">猜对了！+3</b>' : esc(gs.text)}</div>`).join('')}</div>
+    <div class="abs" style="left:476px;top:1196px;width:244px;border-top:6px solid #1d1b1a;padding-top:10px"><div style="font-size:24px;font-weight:900" class="ink-blue">记者名录</div>
+      ${d.players.map((p) => `<div style="font-size:26px;line-height:46px;display:flex;justify-content:space-between"><span>${p.speaking ? '<span class="ink-red">●</span> ' : ''}${esc(p.name)}</span><b>${p.score}</b></div>`).join('')}</div>
+    <div class="abs dots-red multiply" style="left:42px;top:1462px;width:678px;height:92px"></div>
+    <div class="abs" style="left:30px;top:1450px;width:678px;height:92px;background:#1d1b1a;color:#f1e8d4;display:flex;align-items:center;justify-content:center;gap:16px;font-size:36px;font-weight:900">${iconSVG('mic', { fill: '#f1e8d4', stroke: '#f1e8d4', sw: 6, size: 46 })}按住说话 · 阿杰 发言中</div>`;
+  },
+};
+
+const THEMES = { sketch: SK, brutal: BR, win: WN, riso: RS };
+const THEME_CLASS = { sketch: 't-sketch grain', brutal: 't-brutal', win: 't-win', riso: 't-riso grain' };
+
+async function render(theme, screen) {
+  const T = THEMES[theme];
+  const html = screen === 'draw' ? T.draw(DATA.draw) : T.round(DATA[screen], screen);
+  const f = document.createElement('div');
+  f.className = `frame ${THEME_CLASS[theme]}`; f.id = `${theme}-${screen}`; f.innerHTML = html;
+  document.getElementById('root').appendChild(f);
+  for (const c of f.querySelectorAll('canvas[data-doodle]')) drawDoodle(c, c.dataset.doodle);
+  for (const el of f.querySelectorAll('[data-icon]')) await pixelIcon(el);
+}
+
+const q = new URLSearchParams(location.search);
+await Promise.all(['KuaiLe', 'Smiley', 'FusionPixel'].map((f) => document.fonts.load(`48px ${f}`)));
+await document.fonts.load("900 48px 'Noto Sans SC'"); await document.fonts.load("900 48px 'Noto Serif SC'");
+if (q.get('theme')) await render(q.get('theme'), q.get('screen') || 'verbal');
+else { document.body.classList.add('gallery'); for (const t of Object.keys(THEMES)) for (const s of ['verbal', 'charades', 'draw']) await render(t, s); }
+window.__ready = true;
+</script>
+</body>
+</html>
