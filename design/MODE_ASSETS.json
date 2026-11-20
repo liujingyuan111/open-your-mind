@@ -8,6 +8,7 @@
     "profile_path": "blender/lemo_style_guard/profiles/spy-titles/"
   },
   "shared": {
+    "seal": "mission-seal.svg",
     "card_shell": "task-card-master.svg",
     "cut_edge": "hand-cut-edge.svg",
     "paper_seam": "paper-seam.svg",
@@ -37,9 +38,11 @@
       "icon_asset":"cut-paper-microphone.svg",
       "pattern_asset":"diagonal-cut-composition.svg",
       "rule_title":"描述任务",
-      "rule_description":"用语言描述目标，让队友猜出来。",
+      "rule_description":"用语言描述，让队友猜。避开答案和禁止词。",
       "answer_visibility":"performer_only",
       "input_method":"speech",
+      "performer_label":"描述者",
+      "timer_seconds":60,
       "actions":["correct","skip"]
     },
     {
@@ -49,9 +52,11 @@
       "icon_asset":"cut-paper-gesture.svg",
       "pattern_asset":"paper-layer-motion.svg",
       "rule_title":"禁止说话",
-      "rule_description":"只能用动作表演，不能说话或写字。",
+      "rule_description":"只能用动作表演，不能说话、写字或亮屏。",
       "answer_visibility":"performer_only",
       "input_method":"gesture",
+      "performer_label":"表演者",
+      "timer_seconds":60,
       "actions":["correct","skip"]
     }
   ]

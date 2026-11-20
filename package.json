@@ -1,0 +1,24 @@
+{
+  "name": "open-your-mind-round",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "uni -p h5",
+    "build:h5": "uni build -p h5",
+    "build:mp-weixin": "uni build -p mp-weixin",
+    "test": "node --test tests/round.test.mjs"
+  },
+  "dependencies": {
+    "@dcloudio/uni-app": "3.0.0-5030420261029002",
+    "@dcloudio/uni-components": "3.0.0-5030420261029002",
+    "@dcloudio/uni-h5": "3.0.0-5030420261029002",
+    "@dcloudio/uni-mp-weixin": "3.0.0-5030420261029002",
+    "vue": "3.4.21",
+    "vue-i18n": "9.14.5"
+  },
+  "devDependencies": {
+    "@dcloudio/uni-cli-shared": "3.0.0-5030420261029002",
+    "@dcloudio/vite-plugin-uni": "3.0.0-5030420261029002",
+    "vite": "5.2.8"
+  }
+}
