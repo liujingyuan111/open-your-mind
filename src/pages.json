@@ -1,0 +1,8 @@
+{
+  "pages": [{ "path": "pages/round/index", "style": { "navigationBarTitleText": "开个脑洞", "h5": { "navigationStyle": "custom" } } }],
+  "globalStyle": {
+    "navigationBarBackgroundColor": "#F3EBDD",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F3EBDD"
+  }
+}

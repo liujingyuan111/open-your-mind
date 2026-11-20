@@ -1,0 +1,10 @@
+{
+  "name": "开个脑洞",
+  "appid": "",
+  "versionName": "0.1.0",
+  "versionCode": "10",
+  "vueVersion": "3",
+  "mp-weixin": { "appid": "", "usingComponents": true },
+  "h5": { "title": "开个脑洞", "router": { "mode": "hash" } },
+  "uniStatistics": { "enable": false }
+}
