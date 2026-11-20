@@ -1,7 +1,9 @@
-# 01「间谍片头」视觉合同 V0.2
+# 候选 A「间谍片头」视觉合同 V0.2
+
+> **状态：2026-11-20 起进入视觉复核，未冻结为全局主风格。** 用户反馈整体过于单一。以下保留现有方案的参照与实现约束，用于候选 A 的比较和追溯；不强制候选 B 继承。新的比较任务见 [DESIGN-01](https://github.com/liujingyuan111/open-your-mind/issues/1)，最新范围见 [AGENTS.md](../AGENTS.md)。
 
 ## 0. 正确的风格来源
-本项目采用用户已有风格库中的 `spy-titles`（60s Spy Title Sequence）作为主风格约束参照，而不是泛化的剪影风、普通纸艺风或干净扁平矢量风。
+候选 A 采用用户已有风格库中的 `spy-titles`（60s Spy Title Sequence）作为主风格约束参照，而不是泛化的剪影风、普通纸艺风或干净扁平矢量风。
 
 - 用户风格库： https://github.com/liujingyuan111/lemo-blender-style-library
 - 规则卡： `blender/lemo_style_guard/profiles/spy-titles/RULES.md`
