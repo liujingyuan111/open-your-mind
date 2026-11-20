@@ -1,0 +1,5 @@
+{
+  "note": "Fixed UI strings that are drawn as pre-cut glyph geometry. Anything dynamic (answers, twists, rule descriptions, names, scores) stays live text.",
+  "labels": ["猜对", "跳过", "脑洞指令", "绝密 · 仅你可见", "绝密 · 表演者可见", "最后 10 秒", "目标已封存", "禁说", "禁止", "0123456789"],
+  "mode_asset_fields": ["name", "rule_title"]
+}

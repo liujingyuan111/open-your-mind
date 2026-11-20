@@ -1,0 +1,693 @@
+{
+  "schema": "asset-manifest/v1",
+  "style_reference": "spy-titles（Lemo-Opuscar by Lemomo / LemoLab）仅作风格研究参照，见 design/VISUAL_CONTRACT.md §8",
+  "assets": [
+    {
+      "asset_id": "hand-cut-edge",
+      "path": "design/spy-titles/masters/hand-cut-edge.svg",
+      "asset_type": "master",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "shared.cut_edge"
+      ],
+      "notes": "手剪边参数样张；实际轮廓由 src/cutpaper.mjs 生成"
+    },
+    {
+      "asset_id": "paper-seam",
+      "path": "design/spy-titles/masters/paper-seam.svg",
+      "asset_type": "master",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "shared.paper_seam"
+      ],
+      "notes": "切缝规则样张"
+    },
+    {
+      "asset_id": "paper-shadow",
+      "path": "design/spy-titles/masters/paper-shadow.svg",
+      "asset_type": "master",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "shared.paper_shadow"
+      ],
+      "notes": "纸影规则样张"
+    },
+    {
+      "asset_id": "paper-fibre-ink-wear",
+      "path": "design/spy-titles/masters/paper-fibre-ink-wear.svg",
+      "asset_type": "texture",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "shared.paper_texture"
+      ],
+      "notes": "运行时叠加用透明平铺层"
+    },
+    {
+      "asset_id": "paper-texture-preview",
+      "path": "design/spy-titles/masters/paper-texture-preview.svg",
+      "asset_type": "master",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "review"
+      ],
+      "notes": "纸纹在四墨上的强度预览"
+    },
+    {
+      "asset_id": "task-card-master",
+      "path": "design/spy-titles/masters/task-card-master.svg",
+      "asset_type": "master",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件；含由 Noto Sans SC（SIL OFL 1.1）字形轮廓重新切割得到的固定标签图形；未打包字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "shared.card_shell",
+        "TaskCard"
+      ],
+      "notes": "含 id=\"guides\" 隐藏参考层与 slot-* 插槽"
+    },
+    {
+      "asset_id": "cut-paper-mission-mark",
+      "path": "design/spy-titles/icons/cut-paper-mission-mark.svg",
+      "asset_type": "icon",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "shared.task_mark",
+        "TaskCard slot-mark"
+      ],
+      "notes": "任务标识；旋转后切边不变"
+    },
+    {
+      "asset_id": "cut-paper-microphone",
+      "path": "design/spy-titles/icons/cut-paper-microphone.svg",
+      "asset_type": "icon",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "verbal.icon_asset",
+        "ModeMark"
+      ],
+      "notes": "ModeMark: 口头描述"
+    },
+    {
+      "asset_id": "cut-paper-gesture",
+      "path": "design/spy-titles/icons/cut-paper-gesture.svg",
+      "asset_type": "icon",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "charades.icon_asset",
+        "ModeMark"
+      ],
+      "notes": "ModeMark: 动作表演"
+    },
+    {
+      "asset_id": "diagonal-cut-composition",
+      "path": "design/spy-titles/patterns/diagonal-cut-composition.svg",
+      "asset_type": "pattern",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "verbal.pattern_asset"
+      ],
+      "notes": "背景道具层，透明，底色的深色版本"
+    },
+    {
+      "asset_id": "paper-layer-motion",
+      "path": "design/spy-titles/patterns/paper-layer-motion.svg",
+      "asset_type": "pattern",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "charades.pattern_asset"
+      ],
+      "notes": "背景道具层，透明，底色的深色版本"
+    },
+    {
+      "asset_id": "asset-sheet",
+      "path": "design/spy-titles/proposal/asset-sheet.svg",
+      "asset_type": "board",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "review"
+      ],
+      "notes": "图标在三种底色、200px 与 72px 下的可读性检查"
+    },
+    {
+      "asset_id": "round-verbal-playing",
+      "path": "design/spy-titles/proposal/round-verbal-playing.svg",
+      "asset_type": "proposal",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件；含由 Noto Sans SC（SIL OFL 1.1）字形轮廓重新切割得到的固定标签图形；未打包字体文件；动态文字使用 Noto Sans SC（SIL OFL 1.1）系统字体渲染",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "ROUND_SCREEN_SPEC",
+        "ENG-01 reference"
+      ],
+      "notes": "口头描述 · 短答案 · 双行指令"
+    },
+    {
+      "asset_id": "round-charades-playing",
+      "path": "design/spy-titles/proposal/round-charades-playing.svg",
+      "asset_type": "proposal",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件；含由 Noto Sans SC（SIL OFL 1.1）字形轮廓重新切割得到的固定标签图形；未打包字体文件；动态文字使用 Noto Sans SC（SIL OFL 1.1）系统字体渲染",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "ROUND_SCREEN_SPEC",
+        "ENG-01 reference"
+      ],
+      "notes": "动作表演 · 同一组件，仅配置不同"
+    },
+    {
+      "asset_id": "round-verbal-long",
+      "path": "design/spy-titles/proposal/round-verbal-long.svg",
+      "asset_type": "proposal",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件；含由 Noto Sans SC（SIL OFL 1.1）字形轮廓重新切割得到的固定标签图形；未打包字体文件；动态文字使用 Noto Sans SC（SIL OFL 1.1）系统字体渲染",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "ROUND_SCREEN_SPEC",
+        "ENG-01 reference"
+      ],
+      "notes": "口头描述 · 15 字长答案"
+    },
+    {
+      "asset_id": "round-charades-last-call",
+      "path": "design/spy-titles/proposal/round-charades-last-call.svg",
+      "asset_type": "proposal",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件；含由 Noto Sans SC（SIL OFL 1.1）字形轮廓重新切割得到的固定标签图形；未打包字体文件；动态文字使用 Noto Sans SC（SIL OFL 1.1）系统字体渲染",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "ROUND_SCREEN_SPEC",
+        "ENG-01 reference"
+      ],
+      "notes": "动作表演 · 最后 10 秒"
+    },
+    {
+      "asset_id": "round-verbal-stress-32",
+      "path": "design/spy-titles/proposal/round-verbal-stress-32.svg",
+      "asset_type": "proposal",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件；含由 Noto Sans SC（SIL OFL 1.1）字形轮廓重新切割得到的固定标签图形；未打包字体文件；动态文字使用 Noto Sans SC（SIL OFL 1.1）系统字体渲染",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "ROUND_SCREEN_SPEC",
+        "ENG-01 reference"
+      ],
+      "notes": "压力测试 · 32 字 + 三行指令"
+    },
+    {
+      "asset_id": "round-verbal-guesser",
+      "path": "design/spy-titles/proposal/round-verbal-guesser.svg",
+      "asset_type": "proposal",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件；含由 Noto Sans SC（SIL OFL 1.1）字形轮廓重新切割得到的固定标签图形；未打包字体文件；动态文字使用 Noto Sans SC（SIL OFL 1.1）系统字体渲染",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "ROUND_SCREEN_SPEC",
+        "ENG-01 reference"
+      ],
+      "notes": "猜词者视角 · 答案不下发"
+    },
+    {
+      "asset_id": "overview",
+      "path": "design/spy-titles/proposal/overview.svg",
+      "asset_type": "board",
+      "source": "design/spy-titles/build.mjs",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "review"
+      ],
+      "notes": "六帧总览（引用 export/*.png，需先渲染帧）"
+    },
+    {
+      "asset_id": "paper-fibre-ink-wear",
+      "path": "design/spy-titles/export/paper-fibre-ink-wear.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/masters/paper-fibre-ink-wear.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "shared.paper_texture_tile"
+      ],
+      "notes": "运行时纸纹叠加层",
+      "render": {
+        "from": "masters/paper-fibre-ink-wear.svg",
+        "transparent": true,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "hand-cut-edge",
+      "path": "design/spy-titles/export/hand-cut-edge.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/masters/hand-cut-edge.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "shared.cut_edge"
+      ],
+      "notes": "手剪边参数样张；实际轮廓由 src/cutpaper.mjs 生成",
+      "render": {
+        "from": "masters/hand-cut-edge.svg",
+        "transparent": false,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "paper-seam",
+      "path": "design/spy-titles/export/paper-seam.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/masters/paper-seam.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "shared.paper_seam"
+      ],
+      "notes": "切缝规则样张",
+      "render": {
+        "from": "masters/paper-seam.svg",
+        "transparent": false,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "paper-shadow",
+      "path": "design/spy-titles/export/paper-shadow.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/masters/paper-shadow.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "shared.paper_shadow"
+      ],
+      "notes": "纸影规则样张",
+      "render": {
+        "from": "masters/paper-shadow.svg",
+        "transparent": false,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "paper-texture-preview",
+      "path": "design/spy-titles/export/paper-texture-preview.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/masters/paper-texture-preview.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "review"
+      ],
+      "notes": "纸纹在四墨上的强度预览",
+      "render": {
+        "from": "masters/paper-texture-preview.svg",
+        "transparent": false,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "task-card-master",
+      "path": "design/spy-titles/export/task-card-master.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/masters/task-card-master.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件；含由 Noto Sans SC（SIL OFL 1.1）字形轮廓重新切割得到的固定标签图形；未打包字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "shared.card_shell",
+        "TaskCard"
+      ],
+      "notes": "含 id=\"guides\" 隐藏参考层与 slot-* 插槽",
+      "render": {
+        "from": "masters/task-card-master.svg",
+        "transparent": false,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "task-card-master.guides",
+      "path": "design/spy-titles/export/task-card-master.guides.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/masters/task-card-master.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件；含由 Noto Sans SC（SIL OFL 1.1）字形轮廓重新切割得到的固定标签图形；未打包字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "shared.card_shell",
+        "TaskCard"
+      ],
+      "notes": "含 id=\"guides\" 隐藏参考层与 slot-* 插槽",
+      "render": {
+        "from": "masters/task-card-master.svg",
+        "transparent": false,
+        "show": "guides",
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "cut-paper-mission-mark",
+      "path": "design/spy-titles/export/cut-paper-mission-mark.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/icons/cut-paper-mission-mark.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "shared.task_mark",
+        "TaskCard slot-mark"
+      ],
+      "notes": "任务标识；旋转后切边不变",
+      "render": {
+        "from": "icons/cut-paper-mission-mark.svg",
+        "transparent": true,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "cut-paper-microphone",
+      "path": "design/spy-titles/export/cut-paper-microphone.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/icons/cut-paper-microphone.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "verbal.icon_asset",
+        "ModeMark"
+      ],
+      "notes": "ModeMark: 口头描述",
+      "render": {
+        "from": "icons/cut-paper-microphone.svg",
+        "transparent": true,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "cut-paper-gesture",
+      "path": "design/spy-titles/export/cut-paper-gesture.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/icons/cut-paper-gesture.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "charades.icon_asset",
+        "ModeMark"
+      ],
+      "notes": "ModeMark: 动作表演",
+      "render": {
+        "from": "icons/cut-paper-gesture.svg",
+        "transparent": true,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "diagonal-cut-composition",
+      "path": "design/spy-titles/export/diagonal-cut-composition.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/patterns/diagonal-cut-composition.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "verbal.pattern_asset"
+      ],
+      "notes": "背景道具层，透明，底色的深色版本",
+      "render": {
+        "from": "patterns/diagonal-cut-composition.svg",
+        "transparent": true,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "paper-layer-motion",
+      "path": "design/spy-titles/export/paper-layer-motion.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/patterns/paper-layer-motion.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "charades.pattern_asset"
+      ],
+      "notes": "背景道具层，透明，底色的深色版本",
+      "render": {
+        "from": "patterns/paper-layer-motion.svg",
+        "transparent": true,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "asset-sheet",
+      "path": "design/spy-titles/export/asset-sheet.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/proposal/asset-sheet.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "review"
+      ],
+      "notes": "图标在三种底色、200px 与 72px 下的可读性检查",
+      "render": {
+        "from": "proposal/asset-sheet.svg",
+        "transparent": false,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "round-verbal-playing",
+      "path": "design/spy-titles/export/round-verbal-playing.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/proposal/round-verbal-playing.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件；含由 Noto Sans SC（SIL OFL 1.1）字形轮廓重新切割得到的固定标签图形；未打包字体文件；动态文字使用 Noto Sans SC（SIL OFL 1.1）系统字体渲染",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "ROUND_SCREEN_SPEC",
+        "ENG-01 reference"
+      ],
+      "notes": "口头描述 · 短答案 · 双行指令",
+      "render": {
+        "from": "proposal/round-verbal-playing.svg",
+        "transparent": false,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "round-charades-playing",
+      "path": "design/spy-titles/export/round-charades-playing.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/proposal/round-charades-playing.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件；含由 Noto Sans SC（SIL OFL 1.1）字形轮廓重新切割得到的固定标签图形；未打包字体文件；动态文字使用 Noto Sans SC（SIL OFL 1.1）系统字体渲染",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "ROUND_SCREEN_SPEC",
+        "ENG-01 reference"
+      ],
+      "notes": "动作表演 · 同一组件，仅配置不同",
+      "render": {
+        "from": "proposal/round-charades-playing.svg",
+        "transparent": false,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "round-verbal-long",
+      "path": "design/spy-titles/export/round-verbal-long.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/proposal/round-verbal-long.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件；含由 Noto Sans SC（SIL OFL 1.1）字形轮廓重新切割得到的固定标签图形；未打包字体文件；动态文字使用 Noto Sans SC（SIL OFL 1.1）系统字体渲染",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "ROUND_SCREEN_SPEC",
+        "ENG-01 reference"
+      ],
+      "notes": "口头描述 · 15 字长答案",
+      "render": {
+        "from": "proposal/round-verbal-long.svg",
+        "transparent": false,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "round-charades-last-call",
+      "path": "design/spy-titles/export/round-charades-last-call.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/proposal/round-charades-last-call.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件；含由 Noto Sans SC（SIL OFL 1.1）字形轮廓重新切割得到的固定标签图形；未打包字体文件；动态文字使用 Noto Sans SC（SIL OFL 1.1）系统字体渲染",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "ROUND_SCREEN_SPEC",
+        "ENG-01 reference"
+      ],
+      "notes": "动作表演 · 最后 10 秒",
+      "render": {
+        "from": "proposal/round-charades-last-call.svg",
+        "transparent": false,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "round-verbal-stress-32",
+      "path": "design/spy-titles/export/round-verbal-stress-32.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/proposal/round-verbal-stress-32.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件；含由 Noto Sans SC（SIL OFL 1.1）字形轮廓重新切割得到的固定标签图形；未打包字体文件；动态文字使用 Noto Sans SC（SIL OFL 1.1）系统字体渲染",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "ROUND_SCREEN_SPEC",
+        "ENG-01 reference"
+      ],
+      "notes": "压力测试 · 32 字 + 三行指令",
+      "render": {
+        "from": "proposal/round-verbal-stress-32.svg",
+        "transparent": false,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "round-verbal-guesser",
+      "path": "design/spy-titles/export/round-verbal-guesser.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/proposal/round-verbal-guesser.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件；含由 Noto Sans SC（SIL OFL 1.1）字形轮廓重新切割得到的固定标签图形；未打包字体文件；动态文字使用 Noto Sans SC（SIL OFL 1.1）系统字体渲染",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "ROUND_SCREEN_SPEC",
+        "ENG-01 reference"
+      ],
+      "notes": "猜词者视角 · 答案不下发",
+      "render": {
+        "from": "proposal/round-verbal-guesser.svg",
+        "transparent": false,
+        "show": null,
+        "after_frames": false
+      }
+    },
+    {
+      "asset_id": "overview",
+      "path": "design/spy-titles/export/overview.png",
+      "asset_type": "export_png",
+      "source": "design/spy-titles/proposal/overview.svg → tools/render_png.py",
+      "author_or_model": "Claude (Anthropic) · 程序化生成（build.mjs，固定种子）；未使用任何生图模型",
+      "license": "项目原创素材；对外许可由仓库所有者决定（仓库暂无 LICENSE）。未包含任何上游 spy-titles 图像、代码或字体文件",
+      "created_at": "2026-11-20",
+      "version": "0.1.0-proposal",
+      "used_by": [
+        "review"
+      ],
+      "notes": "六帧总览（引用 export/*.png，需先渲染帧）",
+      "render": {
+        "from": "proposal/overview.svg",
+        "transparent": false,
+        "show": null,
+        "after_frames": true
+      }
+    }
+  ]
+}

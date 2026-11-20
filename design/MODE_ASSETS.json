@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "asset_family": "spy-titles-paper-cut",
   "style_reference": {
     "style_id": "spy-titles",
@@ -8,17 +8,26 @@
     "profile_path": "blender/lemo_style_guard/profiles/spy-titles/"
   },
   "shared": {
-    "card_shell": "task-card-master.svg",
-    "cut_edge": "hand-cut-edge.svg",
-    "paper_seam": "paper-seam.svg",
-    "paper_shadow": "paper-shadow.svg",
-    "paper_texture": "paper-fibre-ink-wear.svg",
+    "asset_root": "design/spy-titles/",
+    "card_shell": "masters/task-card-master.svg",
+    "cut_edge": "masters/hand-cut-edge.svg",
+    "paper_seam": "masters/paper-seam.svg",
+    "paper_shadow": "masters/paper-shadow.svg",
+    "paper_texture": "masters/paper-fibre-ink-wear.svg",
+    "paper_texture_tile": "export/paper-fibre-ink-wear.png",
+    "task_mark": "icons/cut-paper-mission-mark.svg",
     "palette": {
       "ink_black": {"hex":"#1b1714","role":"墨黑：主体轮廓与文字"},
       "paper_cream": {"hex":"#efe4c9","role":"纸奶油：底色与纸片"},
-      "hot_ink": {"hex":"#d23a22","role":"热色：强调与危险"},
+      "hot_ink": {"hex":"#d23a22","role":"热色：一处强调与危险"},
       "warm_secondary": {"hex":"#e2a52a","role":"暖次色：次级强调/被追逐对象"}
     },
+    "prop_variants": {
+      "paper_cream": {"hex":"#d8caa8","role":"纸奶油底色上的背景道具（底色的深色版本）"},
+      "warm_secondary": {"hex":"#c08a1e","role":"暖次色底色上的背景道具（底色的深色版本）"}
+    },
+    "paper_shadow_spec": {"base":"ink_black","opacity":0.24,"offset_px":[3,4],"space":"screen"},
+    "seam_px": 2,
     "rules": {
       "flat_opaque_inks": true,
       "gradients": false,
@@ -33,9 +42,10 @@
     {
       "mode_id":"verbal",
       "name":"口头描述",
+      "ground_role":"paper_cream",
       "accent_role":"hot_ink",
-      "icon_asset":"cut-paper-microphone.svg",
-      "pattern_asset":"diagonal-cut-composition.svg",
+      "icon_asset":"icons/cut-paper-microphone.svg",
+      "pattern_asset":"patterns/diagonal-cut-composition.svg",
       "rule_title":"描述任务",
       "rule_description":"用语言描述目标，让队友猜出来。",
       "answer_visibility":"performer_only",
@@ -45,9 +55,10 @@
     {
       "mode_id":"charades",
       "name":"动作表演",
+      "ground_role":"warm_secondary",
       "accent_role":"warm_secondary",
-      "icon_asset":"cut-paper-gesture.svg",
-      "pattern_asset":"paper-layer-motion.svg",
+      "icon_asset":"icons/cut-paper-gesture.svg",
+      "pattern_asset":"patterns/paper-layer-motion.svg",
       "rule_title":"禁止说话",
       "rule_description":"只能用动作表演，不能说话或写字。",
       "answer_visibility":"performer_only",
