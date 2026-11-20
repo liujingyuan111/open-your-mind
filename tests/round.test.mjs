@@ -103,3 +103,15 @@ test('switching resets score and rejects commands from the previous round', () =
   assert.equal(snap().round, 2)
   assert.equal(send('start', { round: old.round }), false)
 })
+
+test('every artwork and accent in the project style contract resolves', () => {
+  const { shared, modes } = read('../design/MODE_ASSETS.json')
+  const files = Object.values(shared).filter(v => typeof v === 'string' && v.endsWith('.svg'))
+  for (const mode of modes) {
+    assert.match(shared.palette[mode.accent_role].hex, /^#[0-9a-f]{6}$/i)
+    files.push(mode.icon_asset, mode.pattern_asset)
+  }
+  for (const file of files) {
+    assert.match(readFileSync(new URL('../src/static/art/' + file, import.meta.url), 'utf8'), /<svg\s/)
+  }
+})
