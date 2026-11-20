@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "开个脑洞题包",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "prompts", "twists"],
+  "properties": {
+    "version": { "const": 1 },
+    "prompts": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/prompt" } },
+    "twists": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/twist" } }
+  },
+  "$defs": {
+    "mode": { "enum": ["verbal", "charades"] },
+    "text": { "type": "string", "minLength": 1, "pattern": "\\S" },
+    "answer": { "allOf": [{ "$ref": "#/$defs/text" }], "maxLength": 32 },
+    "words": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/answer" } },
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+    "difficulty": { "enum": ["easy", "medium", "hard"] },
+    "review": { "enum": ["draft", "playtest", "approved"] },
+    "prompt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "mode_id", "answer", "aliases", "category", "difficulty", "forbidden_terms", "source_note", "rights_note", "review_status"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "mode_id": { "$ref": "#/$defs/mode" },
+        "answer": { "$ref": "#/$defs/answer" }, "aliases": { "$ref": "#/$defs/words" },
+        "category": { "$ref": "#/$defs/text" }, "difficulty": { "$ref": "#/$defs/difficulty" },
+        "forbidden_terms": { "$ref": "#/$defs/words" },
+        "source_note": { "$ref": "#/$defs/text" }, "rights_note": { "$ref": "#/$defs/text" },
+        "review_status": { "$ref": "#/$defs/review" }
+      },
+      "if": { "properties": { "mode_id": { "const": "verbal" } } },
+      "then": { "properties": { "forbidden_terms": { "minItems": 1 } } },
+      "else": { "properties": { "forbidden_terms": { "maxItems": 0 } } }
+    },
+    "twist": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "instruction", "compatible_modes", "difficulty", "review_status"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "title": { "$ref": "#/$defs/text" },
+        "instruction": { "$ref": "#/$defs/text" },
+        "compatible_modes": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/mode" } },
+        "difficulty": { "$ref": "#/$defs/difficulty" }, "review_status": { "$ref": "#/$defs/review" }
+      }
+    }
+  }
+}
