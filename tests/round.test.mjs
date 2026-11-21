@@ -110,6 +110,10 @@ test('every artwork and accent in the project style contract resolves', () => {
   for (const mode of modes) {
     assert.match(shared.palette[mode.accent_role].hex, /^#[0-9a-f]{6}$/i)
     files.push(mode.icon_asset, mode.pattern_asset)
+    for (const variant of Object.values(mode.theme_assets || {})) {
+      assert.match(variant.accent, /^#[0-9a-f]{6}$/i)
+      files.push(variant.icon_asset)
+    }
   }
   for (const file of files) {
     assert.match(readFileSync(new URL('../src/static/art/' + file, import.meta.url), 'utf8'), /<svg\s/)
