@@ -17,7 +17,7 @@ def normalized(word):
     return "".join(unicodedata.normalize("NFKC", word).casefold().split())
 
 
-def validate(pack):
+def validate(pack, enforce_counts=True):
     schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
     Draft202012Validator.check_schema(schema)
     errors = [f"{e.json_path}: {e.message}" for e in Draft202012Validator(schema).iter_errors(pack)]
@@ -43,7 +43,7 @@ def validate(pack):
         for word in map(normalized, p["forbidden_terms"]):
             if any(name in word for name in names):
                 errors.append(f"{key}: 禁止词包含答案或别名")
-    if len(pack["prompts"]) != 30 or counts != {"verbal": 15, "charades": 15}:
+    if enforce_counts and (len(pack["prompts"]) != 30 or counts != {"verbal": 15, "charades": 15}):
         errors.append(f"首测需要两种模式各 15 道可玩题，实际为 {dict(counts)}")
     for mode in ("verbal", "charades"):
         if not any(mode in t["compatible_modes"] and t["review_status"] != "draft" for t in pack["twists"]):
@@ -57,9 +57,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
     try:
         pack = json.loads(args.pack.read_text(encoding="utf-8"))
-        problems = validate(pack)
+        # 数量门槛只对首测包生效；扩展题库只校验结构、去重和指令兼容性
+        problems = validate(pack, enforce_counts=args.pack.resolve() == DEFAULT)
     except (ValueError, OSError) as error:
         problems = [str(error)]
     if problems:
         sys.exit("\n".join(problems))
-    print(f"通过：口头描述 15 题、动作表演 15 题，{len(pack['twists'])} 条脑洞指令。")
+    playable = sum(1 for p in pack["prompts"] if p["review_status"] != "draft")
+    print(f"通过：{args.pack.name} 共 {len(pack['prompts'])} 题（可玩 {playable}），{len(pack['twists'])} 条脑洞指令。")

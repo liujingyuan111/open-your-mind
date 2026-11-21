@@ -12,6 +12,7 @@
 | hand-cut-edge.svg | 100 × 28 | 卡面边缘的固定斜切缺口 |
 | paper-seam.svg | 200 × 5 | 纸片留出的底色切缝 |
 | paper-shadow.svg | 200 × 100 | 错位纸片下方的墨色阴影 |
+| doodle-microphone.svg、doodle-gesture.svg | 32 × 32 | sketch 主题（B）的玩法选择涂鸦图标 |
 
 配色沿用 design/MODE_ASSETS.json。视觉参考为 Lemomo / LemoLab 的 60s Spy Title Sequence 及用户整理的 spy-titles 风格约束，应用在有限平色、纸缝、固定手切轮廓和对角构图上。图形不含原作资产。
 

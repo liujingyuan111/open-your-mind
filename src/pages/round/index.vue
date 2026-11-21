@@ -1,5 +1,5 @@
 <template>
-  <RoundScreen v-if="state" :state="state" :assets="assets" @command="onCommand" />
+  <RoundScreen v-if="state" :state="state" :assets="assets" :theme="theme" @command="onCommand" />
 </template>
 
 <script setup>
@@ -7,10 +7,15 @@ import { ref } from 'vue'
 import { onLoad, onShow, onHide, onUnload } from '@dcloudio/uni-app'
 import RoundScreen from '../../components/RoundScreen.vue'
 import { createLocalRound } from '../../game/local-round.mjs'
+import { mulberry32 } from '../../game/seeded-random.mjs'
 import assets from '../../../design/MODE_ASSETS.json'
-import pack from '../../../data/initial-pack.json'
+import initialPack from '../../../data/initial-pack.json'
+import libraryPack from '../../../data/library-pack.json'
 
+const THEMES = ['spy-light', 'sketch']
+const PACKS = { initial: initialPack, library: libraryPack }
 const state = ref(null)
+const theme = ref('sketch')
 let source
 let ticker
 
@@ -24,7 +29,12 @@ function onCommand(command) {
 }
 onLoad(query => {
   const role = query.role === undefined || query.role === 'performer' ? 'performer' : 'guesser'
-  source = createLocalRound({ pack, modes: assets.modes, role })
+  if (THEMES.includes(query.theme)) theme.value = query.theme
+  // ?seed= 固定洗牌顺序，供 A/B 评审用同一批题对比两个主题
+  const seed = Number.parseInt(query.seed ?? '', 10)
+  const random = Number.isFinite(seed) ? mulberry32(seed) : Math.random
+  const pack = PACKS[query.pack] || PACKS.library
+  source = createLocalRound({ pack, modes: assets.modes, role, random })
   refresh()
 })
 onShow(() => {

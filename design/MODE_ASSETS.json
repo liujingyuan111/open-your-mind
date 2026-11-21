@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "asset_family": "spy-titles-paper-cut",
   "style_reference": {
     "style_id": "spy-titles",
@@ -7,6 +7,7 @@
     "repository": "https://github.com/liujingyuan111/lemo-blender-style-library",
     "profile_path": "blender/lemo_style_guard/profiles/spy-titles/"
   },
+  "theme_note": "1.2 起模式可按主题提供局部图形与强调色（theme_assets），用于 A/B 视觉比较；主风格未定，此字段不代表冻结新风格。",
   "shared": {
     "seal": "mission-seal.svg",
     "card_shell": "task-card-master.svg",
@@ -43,7 +44,10 @@
       "input_method":"speech",
       "performer_label":"描述者",
       "timer_seconds":60,
-      "actions":["correct","skip"]
+      "actions":["correct","skip"],
+      "theme_assets": {
+        "sketch": { "icon_asset": "doodle-microphone.svg", "accent": "#ff9fb0" }
+      }
     },
     {
       "mode_id":"charades",
@@ -57,7 +61,10 @@
       "input_method":"gesture",
       "performer_label":"表演者",
       "timer_seconds":60,
-      "actions":["correct","skip"]
+      "actions":["correct","skip"],
+      "theme_assets": {
+        "sketch": { "icon_asset": "doodle-gesture.svg", "accent": "#ffd94d" }
+      }
     }
   ]
 }
