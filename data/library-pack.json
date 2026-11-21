@@ -1,0 +1,1220 @@
+{
+  "version": 1,
+  "prompts": [
+    {
+      "id": "movie-v-01",
+      "mode_id": "verbal",
+      "answer": "流浪地球",
+      "aliases": [],
+      "category": "电影",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "地球",
+        "太阳"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "movie-v-02",
+      "mode_id": "verbal",
+      "answer": "霸王别姬",
+      "aliases": [],
+      "category": "电影",
+      "difficulty": "hard",
+      "forbidden_terms": [
+        "京剧",
+        "程蝶衣"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "movie-v-03",
+      "mode_id": "verbal",
+      "answer": "让子弹飞",
+      "aliases": [],
+      "category": "电影",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "子弹",
+        "姜文"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "movie-v-04",
+      "mode_id": "verbal",
+      "answer": "疯狂动物城",
+      "aliases": [],
+      "category": "电影",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "动物城",
+        "兔子"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "movie-c-01",
+      "mode_id": "charades",
+      "answer": "泰坦尼克号",
+      "aliases": [],
+      "category": "电影",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "movie-c-02",
+      "mode_id": "charades",
+      "answer": "蜘蛛侠",
+      "aliases": [],
+      "category": "电影",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "movie-c-03",
+      "mode_id": "charades",
+      "answer": "大白鲨",
+      "aliases": [],
+      "category": "电影",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "movie-c-04",
+      "mode_id": "charades",
+      "answer": "变形金刚",
+      "aliases": [],
+      "category": "电影",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "tv-v-01",
+      "mode_id": "verbal",
+      "answer": "还珠格格",
+      "aliases": [],
+      "category": "电视剧",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "小燕子",
+        "紫薇"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "tv-v-02",
+      "mode_id": "verbal",
+      "answer": "狂飙",
+      "aliases": [],
+      "category": "电视剧",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "高启强",
+        "卖鱼"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "tv-v-03",
+      "mode_id": "verbal",
+      "answer": "庆余年",
+      "aliases": [],
+      "category": "电视剧",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "范闲",
+        "穿越"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "tv-v-04",
+      "mode_id": "verbal",
+      "answer": "家有儿女",
+      "aliases": [],
+      "category": "电视剧",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "刘星",
+        "小雪"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "tv-c-01",
+      "mode_id": "charades",
+      "answer": "西游记",
+      "aliases": [],
+      "category": "电视剧",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "tv-c-02",
+      "mode_id": "charades",
+      "answer": "武林外传",
+      "aliases": [],
+      "category": "电视剧",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "tv-c-03",
+      "mode_id": "charades",
+      "answer": "甄嬛传",
+      "aliases": [],
+      "category": "电视剧",
+      "difficulty": "hard",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "tv-c-04",
+      "mode_id": "charades",
+      "answer": "亮剑",
+      "aliases": [],
+      "category": "电视剧",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "anime-v-01",
+      "mode_id": "verbal",
+      "answer": "海贼王",
+      "aliases": [
+        "航海王"
+      ],
+      "category": "动漫",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "路飞",
+        "草帽"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "anime-v-02",
+      "mode_id": "verbal",
+      "answer": "千与千寻",
+      "aliases": [],
+      "category": "动漫",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "宫崎骏",
+        "汤婆婆"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "anime-v-03",
+      "mode_id": "verbal",
+      "answer": "鬼灭之刃",
+      "aliases": [],
+      "category": "动漫",
+      "difficulty": "hard",
+      "forbidden_terms": [
+        "炭治郎",
+        "呼吸"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "anime-v-04",
+      "mode_id": "verbal",
+      "answer": "熊出没",
+      "aliases": [],
+      "category": "动漫",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "光头强",
+        "砍树"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "anime-c-01",
+      "mode_id": "charades",
+      "answer": "奥特曼",
+      "aliases": [],
+      "category": "动漫",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "anime-c-02",
+      "mode_id": "charades",
+      "answer": "哆啦A梦",
+      "aliases": [
+        "机器猫",
+        "小叮当"
+      ],
+      "category": "动漫",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "anime-c-03",
+      "mode_id": "charades",
+      "answer": "灌篮高手",
+      "aliases": [],
+      "category": "动漫",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "anime-c-04",
+      "mode_id": "charades",
+      "answer": "火影忍者",
+      "aliases": [],
+      "category": "动漫",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "book-v-01",
+      "mode_id": "verbal",
+      "answer": "三国演义",
+      "aliases": [],
+      "category": "书籍",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "诸葛亮",
+        "曹操"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "book-v-02",
+      "mode_id": "verbal",
+      "answer": "水浒传",
+      "aliases": [],
+      "category": "书籍",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "梁山",
+        "宋江"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "book-v-03",
+      "mode_id": "verbal",
+      "answer": "三体",
+      "aliases": [],
+      "category": "书籍",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "刘慈欣",
+        "水滴"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "book-v-04",
+      "mode_id": "verbal",
+      "answer": "小王子",
+      "aliases": [],
+      "category": "书籍",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "玫瑰",
+        "狐狸"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "book-c-01",
+      "mode_id": "charades",
+      "answer": "武松打虎",
+      "aliases": [],
+      "category": "书籍",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "book-c-02",
+      "mode_id": "charades",
+      "answer": "黛玉葬花",
+      "aliases": [],
+      "category": "书籍",
+      "difficulty": "hard",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "book-c-03",
+      "mode_id": "charades",
+      "answer": "哈利波特",
+      "aliases": [],
+      "category": "书籍",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "book-c-04",
+      "mode_id": "charades",
+      "answer": "皇帝的新装",
+      "aliases": [],
+      "category": "书籍",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "game-v-01",
+      "mode_id": "verbal",
+      "answer": "王者荣耀",
+      "aliases": [
+        "王者"
+      ],
+      "category": "游戏",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "推塔",
+        "五杀"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "game-v-02",
+      "mode_id": "verbal",
+      "answer": "原神",
+      "aliases": [],
+      "category": "游戏",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "抽卡",
+        "米哈游"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "game-v-03",
+      "mode_id": "verbal",
+      "answer": "我的世界",
+      "aliases": [
+        "MC"
+      ],
+      "category": "游戏",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "方块",
+        "挖矿"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "game-v-04",
+      "mode_id": "verbal",
+      "answer": "英雄联盟",
+      "aliases": [
+        "LOL"
+      ],
+      "category": "游戏",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "召唤师",
+        "上分"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "game-c-01",
+      "mode_id": "charades",
+      "answer": "超级马里奥",
+      "aliases": [
+        "马里奥"
+      ],
+      "category": "游戏",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "game-c-02",
+      "mode_id": "charades",
+      "answer": "俄罗斯方块",
+      "aliases": [],
+      "category": "游戏",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "game-c-03",
+      "mode_id": "charades",
+      "answer": "斗地主",
+      "aliases": [],
+      "category": "游戏",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "game-c-04",
+      "mode_id": "charades",
+      "answer": "和平精英",
+      "aliases": [],
+      "category": "游戏",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "meme-v-01",
+      "mode_id": "verbal",
+      "answer": "凡尔赛",
+      "aliases": [],
+      "category": "网络梗",
+      "difficulty": "hard",
+      "forbidden_terms": [
+        "炫耀",
+        "低调"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "meme-v-02",
+      "mode_id": "verbal",
+      "answer": "内卷",
+      "aliases": [],
+      "category": "网络梗",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "竞争",
+        "卷"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "meme-v-03",
+      "mode_id": "verbal",
+      "answer": "破防",
+      "aliases": [],
+      "category": "网络梗",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "情绪",
+        "绷不住"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "meme-v-04",
+      "mode_id": "verbal",
+      "answer": "显眼包",
+      "aliases": [],
+      "category": "网络梗",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "出风头",
+        "抢镜"
+      ],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "meme-c-01",
+      "mode_id": "charades",
+      "answer": "真香",
+      "aliases": [],
+      "category": "网络梗",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "meme-c-02",
+      "mode_id": "charades",
+      "answer": "摸鱼",
+      "aliases": [],
+      "category": "网络梗",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "meme-c-03",
+      "mode_id": "charades",
+      "answer": "躺平",
+      "aliases": [],
+      "category": "网络梗",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "meme-c-04",
+      "mode_id": "charades",
+      "answer": "社死",
+      "aliases": [],
+      "category": "网络梗",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "题包词条，答案为公众熟知的作品名称或流行概念。",
+      "rights_note": "作品名称/流行语仅作猜词口头指称，不含台词、图像、音乐等受保护素材；上线前需复核指称与商标边界。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "animal-v-01",
+      "mode_id": "verbal",
+      "answer": "树懒",
+      "aliases": [],
+      "category": "动物",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "慢",
+        "闪电"
+      ],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "animal-v-02",
+      "mode_id": "verbal",
+      "answer": "长颈鹿",
+      "aliases": [],
+      "category": "动物",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "脖子",
+        "高"
+      ],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "animal-v-03",
+      "mode_id": "verbal",
+      "answer": "章鱼",
+      "aliases": [],
+      "category": "动物",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "触手",
+        "喷墨"
+      ],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "animal-v-04",
+      "mode_id": "verbal",
+      "answer": "萤火虫",
+      "aliases": [],
+      "category": "动物",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "发光",
+        "夜晚"
+      ],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "animal-c-01",
+      "mode_id": "charades",
+      "answer": "袋鼠",
+      "aliases": [],
+      "category": "动物",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "animal-c-02",
+      "mode_id": "charades",
+      "answer": "企鹅",
+      "aliases": [],
+      "category": "动物",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "animal-c-03",
+      "mode_id": "charades",
+      "answer": "螃蟹",
+      "aliases": [],
+      "category": "动物",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "animal-c-04",
+      "mode_id": "charades",
+      "answer": "孔雀",
+      "aliases": [],
+      "category": "动物",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "job-v-01",
+      "mode_id": "verbal",
+      "answer": "消防员",
+      "aliases": [],
+      "category": "职业",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "灭火",
+        "水枪"
+      ],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "job-v-02",
+      "mode_id": "verbal",
+      "answer": "快递员",
+      "aliases": [],
+      "category": "职业",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "包裹",
+        "上门"
+      ],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "job-v-03",
+      "mode_id": "verbal",
+      "answer": "牙医",
+      "aliases": [],
+      "category": "职业",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "拔牙",
+        "钻头"
+      ],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "job-v-04",
+      "mode_id": "verbal",
+      "answer": "摄影师",
+      "aliases": [],
+      "category": "职业",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "相机",
+        "拍照"
+      ],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "job-c-01",
+      "mode_id": "charades",
+      "answer": "理发师",
+      "aliases": [],
+      "category": "职业",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "job-c-02",
+      "mode_id": "charades",
+      "answer": "厨师",
+      "aliases": [],
+      "category": "职业",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "job-c-03",
+      "mode_id": "charades",
+      "answer": "交警",
+      "aliases": [],
+      "category": "职业",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "job-c-04",
+      "mode_id": "charades",
+      "answer": "魔术师",
+      "aliases": [],
+      "category": "职业",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "sport-v-01",
+      "mode_id": "verbal",
+      "answer": "蹦极",
+      "aliases": [],
+      "category": "运动",
+      "difficulty": "medium",
+      "forbidden_terms": [
+        "绳子",
+        "高台"
+      ],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "sport-v-02",
+      "mode_id": "verbal",
+      "answer": "射箭",
+      "aliases": [],
+      "category": "运动",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "弓",
+        "靶心"
+      ],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "sport-v-03",
+      "mode_id": "verbal",
+      "answer": "举重",
+      "aliases": [],
+      "category": "运动",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "杠铃",
+        "力气"
+      ],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "sport-v-04",
+      "mode_id": "verbal",
+      "answer": "拔河",
+      "aliases": [],
+      "category": "运动",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "绳子",
+        "两队"
+      ],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "sport-c-01",
+      "mode_id": "charades",
+      "answer": "跳绳",
+      "aliases": [],
+      "category": "运动",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "sport-c-02",
+      "mode_id": "charades",
+      "answer": "举重",
+      "aliases": [],
+      "category": "运动",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "sport-c-03",
+      "mode_id": "charades",
+      "answer": "射箭",
+      "aliases": [],
+      "category": "运动",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "sport-c-04",
+      "mode_id": "charades",
+      "answer": "拔河",
+      "aliases": [],
+      "category": "运动",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "place-v-01",
+      "mode_id": "verbal",
+      "answer": "菜市场",
+      "aliases": [],
+      "category": "场景",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "买菜",
+        "砍价"
+      ],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "place-v-02",
+      "mode_id": "verbal",
+      "answer": "游乐场",
+      "aliases": [],
+      "category": "场景",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "过山车",
+        "摩天轮"
+      ],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "place-v-03",
+      "mode_id": "verbal",
+      "answer": "火锅店",
+      "aliases": [],
+      "category": "场景",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "涮肉",
+        "麻辣"
+      ],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "place-v-04",
+      "mode_id": "verbal",
+      "answer": "图书馆",
+      "aliases": [],
+      "category": "场景",
+      "difficulty": "easy",
+      "forbidden_terms": [
+        "借书",
+        "安静"
+      ],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "place-c-01",
+      "mode_id": "charades",
+      "answer": "过山车",
+      "aliases": [],
+      "category": "场景",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "place-c-02",
+      "mode_id": "charades",
+      "answer": "挤地铁",
+      "aliases": [],
+      "category": "场景",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "place-c-03",
+      "mode_id": "charades",
+      "answer": "吃火锅",
+      "aliases": [],
+      "category": "场景",
+      "difficulty": "easy",
+      "forbidden_terms": [],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    },
+    {
+      "id": "place-c-04",
+      "mode_id": "charades",
+      "answer": "赶飞机",
+      "aliases": [],
+      "category": "场景",
+      "difficulty": "medium",
+      "forbidden_terms": [],
+      "source_note": "自拟词条与情境。",
+      "rights_note": "原创编写，无引用台词或外部素材。",
+      "review_status": "playtest"
+    }
+  ],
+  "twists": [
+    {
+      "id": "bulletin",
+      "title": "快讯播报",
+      "instruction": "像播报一条刚刚收到的新闻，先交代发生的事，再补充一个细节。",
+      "compatible_modes": [
+        "verbal"
+      ],
+      "difficulty": "medium",
+      "review_status": "playtest"
+    },
+    {
+      "id": "visitor",
+      "title": "初来地球",
+      "instruction": "假装队友第一次来地球，只讲看到的样子和它能做的事。",
+      "compatible_modes": [
+        "verbal"
+      ],
+      "difficulty": "easy",
+      "review_status": "playtest"
+    },
+    {
+      "id": "lost-found",
+      "title": "招领广播",
+      "instruction": "用失物招领广播的语气，描述两条能让人认出来的线索。",
+      "compatible_modes": [
+        "verbal"
+      ],
+      "difficulty": "medium",
+      "review_status": "playtest"
+    },
+    {
+      "id": "small-talk",
+      "title": "悄悄告诉你",
+      "instruction": "用分享小秘密的口吻，把线索一条一条告诉队友。",
+      "compatible_modes": [
+        "verbal"
+      ],
+      "difficulty": "easy",
+      "review_status": "playtest"
+    },
+    {
+      "id": "slow-motion",
+      "title": "慢镜头",
+      "instruction": "把关键动作放慢，让队友看清每一步。",
+      "compatible_modes": [
+        "charades"
+      ],
+      "difficulty": "easy",
+      "review_status": "playtest"
+    },
+    {
+      "id": "freeze",
+      "title": "定格画面",
+      "instruction": "每做完一个关键动作就停住一拍，再接着演下去。",
+      "compatible_modes": [
+        "charades"
+      ],
+      "difficulty": "medium",
+      "review_status": "playtest"
+    },
+    {
+      "id": "rewind",
+      "title": "倒带重播",
+      "instruction": "先把动作完整演一遍，再像录像倒带一样退回开头。",
+      "compatible_modes": [
+        "charades"
+      ],
+      "difficulty": "medium",
+      "review_status": "playtest"
+    },
+    {
+      "id": "zoom",
+      "title": "局部特写",
+      "instruction": "做完一遍后，把最能说明答案的那个小动作夸张地再演一次。",
+      "compatible_modes": [
+        "charades"
+      ],
+      "difficulty": "easy",
+      "review_status": "playtest"
+    },
+    {
+      "id": "trailer",
+      "title": "预告片腔",
+      "instruction": "用电影预告片的语气描述，一句比一句夸张。",
+      "compatible_modes": [
+        "verbal"
+      ],
+      "difficulty": "medium",
+      "review_status": "playtest"
+    },
+    {
+      "id": "live-selling",
+      "title": "带货主播",
+      "instruction": "把答案当成直播间的商品卖力吆喝，但忍住不说它的名字。",
+      "compatible_modes": [
+        "verbal"
+      ],
+      "difficulty": "medium",
+      "review_status": "playtest"
+    },
+    {
+      "id": "robot-dance",
+      "title": "机械舞步",
+      "instruction": "所有动作都要变成一顿一顿的机器人舞。",
+      "compatible_modes": [
+        "charades"
+      ],
+      "difficulty": "easy",
+      "review_status": "playtest"
+    },
+    {
+      "id": "puppet",
+      "title": "木偶戏",
+      "instruction": "假装自己是提线木偶，四肢僵硬地完成所有动作。",
+      "compatible_modes": [
+        "charades"
+      ],
+      "difficulty": "medium",
+      "review_status": "playtest"
+    }
+  ]
+}

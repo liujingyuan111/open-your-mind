@@ -1,7 +1,8 @@
-# 猜词回合屏 A/B 主题（评审稿，未冻结）
+# 猜词回合屏 A/B 主题（B 已选定）
 
 对应 AGENTS.md 视觉复核任务：同一猜词回合页、同一题目数据、同一套操作，比较两个方向。
-本文件是实现说明与复现方法，不是风格冻结决定。
+**2026-11-21 用户评审 PR #8 后选定 B「手账便签」为正式主风格**，冻结规则见 design/VISUAL_CONTRACT_SKETCH.md；
+`sketch` 现为默认主题，`spy-light` 保留作对照。
 
 ## 两个主题
 
@@ -36,8 +37,10 @@ npm run build:mp-weixin          # 产物在 dist/build/mp-weixin，用微信开
 
 页面参数（H5 哈希路由同样适用）：
 
-- `?theme=spy-light|sketch` 选主题，默认 `spy-light`
-- `?seed=65` 固定洗牌顺序，两模式第一张都是 15 字长答案，用于逐张对齐比较
+- `?theme=spy-light|sketch` 选主题，默认 `sketch`
+- `?pack=library|initial` 选题库，默认 `library`（扩充题库 80 题）；`initial` 为首测 30 题
+- `?seed=` 固定洗牌顺序。首测包用 `?pack=initial&seed=65` 时两模式第一张都是 15 字长答案；
+  扩充题库用 `?seed=7`（口头描述首张为电影题包）和 `?seed=21`（动作表演首张为「泰坦尼克号」）
 - `?role=guesser` 猜题者视角
 
 ## 已验证

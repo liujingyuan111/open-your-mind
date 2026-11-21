@@ -19,6 +19,10 @@ OUT = ROOT / "docs" / "screenshots" / "ab"
 SEED = 65  # deals the 15-char answer first in both modes (see tests/seeded-random.test.mjs)
 
 SCENARIOS = ["ready", "verbal-long", "charades-long", "last-call"]
+# (theme, scenario, pack, seed)：A/B 对比沿用首测包长答案；另补两张扩充题库实卡
+SHOTS = [(t, s, "initial", SEED) for t in ["spy-light", "sketch"] for s in SCENARIOS]
+SHOTS += [("sketch", "library-verbal", "library", 7),    # 首张为电影题包「霸王别姬」
+          ("sketch", "library-charades", "library", 21)]  # 首张为电影题包「泰坦尼克号」
 
 
 def serve(port):
@@ -27,12 +31,12 @@ def serve(port):
         httpd.serve_forever()
 
 
-def shoot(page, theme, scenario, port):
-    page.goto(f"http://127.0.0.1:{port}/#/pages/round/index?theme={theme}&seed={SEED}")
+def shoot(page, theme, scenario, port, pack="initial", seed=SEED):
+    page.goto(f"http://127.0.0.1:{port}/#/pages/round/index?theme={theme}&pack={pack}&seed={seed}")
     page.reload()  # hash-only navigation would keep the previous scenario's round state
     page.wait_for_timeout(900)
     if scenario != "ready":
-        if scenario.startswith("charades"):
+        if "charades" in scenario:
             page.click("text=动作表演")
             page.wait_for_timeout(300)
         page.click("text=开始回合")
@@ -60,9 +64,8 @@ def main():
         page = browser.new_page(viewport={"width": 390, "height": 844}, device_scale_factor=2)
         # local-round captures Date.now by reference at round creation; wrap it before page scripts run
         page.add_init_script("window.__timeOffset = 0; const real = Date.now.bind(Date); Date.now = () => real() + window.__timeOffset;")
-        for theme in ["spy-light", "sketch"]:
-            for scenario in SCENARIOS:
-                shoot(page, theme, scenario, port)
+        for theme, scenario, pack, seed in SHOTS:
+            shoot(page, theme, scenario, port, pack, seed)
         browser.close()
 
 
